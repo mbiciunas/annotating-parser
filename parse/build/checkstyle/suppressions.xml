@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+     "-//Puppy Crawl//DTD Suppressions 1.0//EN"
+     "http://www.puppycrawl.com/dtds/suppressions_1_0.dtd">
+
+<suppressions>
+<!--   <suppress checks="MagicNumberCheck" files="com[\\/]agorex[\\/]parse[\\/]token"/> -->
+  <suppress checks="MagicNumberCheck" files="com[\\/]agorex[\\/]parse[\\/]data"/>
+<!--   <suppress checks="MagicNumberCheck" files="com[\\/]agorex[\\/]parse[\\/]error"/> -->
+<!--   <suppress checks="MagicNumberCheck" files="com[\\/]agorex[\\/]parse[\\/]search"/> -->
+  <suppress checks="MagicNumberCheck" files=".*Test\.java"/>
+</suppressions>
