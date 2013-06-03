@@ -1,0 +1,16 @@
+# ignore bin directories
+bin/**
+
+# ignore maven directories
+target/
+
+# ignore all old, temp, backup, etc files
+*.old
+*.tmp
+*.bak
+*.swp
+*~
+
+## ignore eclipse files
+**/.*
+!/.gitignore
