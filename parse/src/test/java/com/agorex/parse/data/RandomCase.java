@@ -30,9 +30,15 @@ final class RandomCase {
    private final transient Random randomGenerator = new Random(System.currentTimeMillis());
 
 
+   /**
+    * @return array of statements
+    */
    List<String> getArraySelect() { return arrayStatement; }
 
 
+   /**
+    * @param statement text to be tokenized
+    */
    void makeRandomMix(final String statement) {
       arrayStatement.add(statement);
       arrayStatement.add(caseLower(statement));

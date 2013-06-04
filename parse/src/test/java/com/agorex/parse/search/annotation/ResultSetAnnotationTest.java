@@ -23,6 +23,10 @@ import org.junit.Test;
 
 import com.agorex.parse.data.sql.ConfigurationSql;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ResultSetAnnotationTest {
 
    private static final int ANNOTATION_QUOTE_SINGLE = ConfigurationSql.ANNOTATION_QUOTE_SINGLE;
@@ -38,12 +42,18 @@ public final class ResultSetAnnotationTest {
    private transient ResultSetAnnotation resultSetAnnotation;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       resultSetAnnotation = new ResultSetAnnotation(2);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSetAnnotation() {
       resultSetAnnotation = new ResultSetAnnotation(2);
@@ -52,6 +62,9 @@ public final class ResultSetAnnotationTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       resultSetAnnotation.add(ANNOTATION_QUOTE_SINGLE, TOKEN_QUOTE_SINGLE);
@@ -62,6 +75,9 @@ public final class ResultSetAnnotationTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSize() {
       resultSetAnnotation.add(ANNOTATION_QUOTE_SINGLE, TOKEN_QUOTE_SINGLE);
@@ -70,6 +86,9 @@ public final class ResultSetAnnotationTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotation() {
       resultSetAnnotation.add(ANNOTATION_QUOTE_SINGLE, TOKEN_QUOTE_SINGLE);
@@ -78,6 +97,9 @@ public final class ResultSetAnnotationTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetToken() {
       resultSetAnnotation.add(ANNOTATION_QUOTE_SINGLE, TOKEN_QUOTE_SINGLE);
@@ -86,6 +108,9 @@ public final class ResultSetAnnotationTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAdd() {
       resultSetAnnotation.add(ANNOTATION_QUOTE_SINGLE, TOKEN_QUOTE_SINGLE);
@@ -95,6 +120,9 @@ public final class ResultSetAnnotationTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSort() {
       resultSetAnnotation.add(ANNOTATION_BRACKET_CLOSE, TOKEN_BRACKET_CLOSE);

@@ -46,7 +46,18 @@ public final class AnnotationState {
     *
     */
    public enum BracketState {
-      OPEN, CLOSE, ERROR
+      /**
+       * A bracket has been opened.
+       */
+      OPEN,
+      /**
+       * no brackets are open.
+       */
+      CLOSE,
+      /**
+       * bracket has been closed out of order.
+       */
+      ERROR
    }
 
 
@@ -55,7 +66,18 @@ public final class AnnotationState {
     *
     */
    public enum QuoteState {
-      NONE, SINGLE, DOUBLE
+      /**
+       * No quotes are open.
+       */
+      NONE,
+      /**
+       * A single quote has been opened.
+       */
+      SINGLE,
+      /**
+       * A double quote has been opened.
+       */
+      DOUBLE
    }
 
 

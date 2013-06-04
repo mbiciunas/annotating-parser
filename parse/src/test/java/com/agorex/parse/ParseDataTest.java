@@ -25,6 +25,10 @@ import com.agorex.parse.annotation.AnnotationState;
 import com.agorex.parse.data.sql.ConfigurationSql;
 //import com.agorex.parse.data.sql.ConfigurationSql;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ParseDataTest {
 
    private static final String DATA = "This is a test";
@@ -32,22 +36,31 @@ public final class ParseDataTest {
    private transient ParseData parseData;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       parseData = new ParseData(ConfigurationSql.getConfiguration());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testParseData() {
       assertEquals("Configuration data is wrong", ConfigurationSql.ANNOTATION_QUOTE_SINGLE, parseData.getConfigurationData().getAnnotationQuoteSingle());
       assertEquals("Error data is wrong", -1, parseData.getError().getSize());
       assertEquals("Error data is wrong", 0, parseData.getSource().getSourceLength());
-      assertEquals("Annotation stack data is wrong", AnnotationState.BracketState.CLOSE, parseData.getStackAnnotation().getBracketState());
+      assertEquals("Annotation stack data is wrong", AnnotationState.BracketState.CLOSE, parseData.getAnnotationState().getBracketState());
       assertEquals("Error data is wrong", -1, parseData.getToken().getSize());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       parseData.initialize(DATA);
@@ -55,11 +68,14 @@ public final class ParseDataTest {
       assertEquals("Configuration data is wrong", ConfigurationSql.ANNOTATION_QUOTE_SINGLE, parseData.getConfigurationData().getAnnotationQuoteSingle());
       assertEquals("Error data is wrong", -1, parseData.getError().getSize());
       assertEquals("Error data is wrong", DATA.length(), parseData.getSource().getSourceLength());
-      assertEquals("Annotation stack data is wrong", AnnotationState.BracketState.CLOSE, parseData.getStackAnnotation().getBracketState());
+      assertEquals("Annotation stack data is wrong", AnnotationState.BracketState.CLOSE, parseData.getAnnotationState().getBracketState());
       assertEquals("Error data is wrong", -1, parseData.getToken().getSize());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSource() {
       parseData.initialize(DATA);
@@ -68,6 +84,9 @@ public final class ParseDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetToken() {
       parseData.initialize(DATA);
@@ -76,6 +95,9 @@ public final class ParseDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetError() {
       parseData.initialize(DATA);
@@ -84,14 +106,20 @@ public final class ParseDataTest {
    }
 
 
-   @Test
-   public void testGetStackAnnotation() {
-      parseData.initialize(DATA);
+   /**
+       *
+       */
+      @Test
+      public void testGetAnnotationState() {
+         parseData.initialize(DATA);
 
-      assertEquals("Annotation stack data is wrong", AnnotationState.BracketState.CLOSE, parseData.getStackAnnotation().getBracketState());
-   }
+         assertEquals("Annotation stack data is wrong", AnnotationState.BracketState.CLOSE, parseData.getAnnotationState().getBracketState());
+      }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetConfigurationData() {
       parseData.initialize(DATA);

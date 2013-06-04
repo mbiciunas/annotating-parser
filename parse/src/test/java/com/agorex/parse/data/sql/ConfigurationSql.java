@@ -25,11 +25,29 @@ import com.agorex.parse.token.ConfigurationData;
 public final class ConfigurationSql {
 
    static final int ANNOTATION_NONE = 0;
+
    private static final int ANNOTATION_SPACE = 1;
+
+   /**
+    * Value for annotation of a single quote character.
+    */
    public static final int ANNOTATION_QUOTE_SINGLE = 2;
+
+   /**
+    * Value for annotation of a double quote character.
+    */
    public static final int ANNOTATION_QUOTE_DOUBLE = 3;
+
+   /**
+    * Value for annotation of a bracket open character.
+    */
    public static final int ANNOTATION_BRACKET_OPEN = 4;
+
+   /**
+    * Value for annotation of a bracket close character.
+    */
    public static final int ANNOTATION_BRACKET_CLOSE = 5;
+
    private static final int ANNOTATION_EQUAL = 6;
    private static final int ANNOTATION_COMMA = 7;
    private static final int ANNOTATION_BACKSLASH = 8;
@@ -42,6 +60,9 @@ public final class ConfigurationSql {
    }
 
 
+   /**
+    * @return parser configuration
+    */
    public static ConfigurationData getConfiguration() {
       final ConfigurationData configurationData = new ConfigurationData(10);
 

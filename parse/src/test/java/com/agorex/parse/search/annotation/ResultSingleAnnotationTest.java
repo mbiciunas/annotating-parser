@@ -21,6 +21,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ResultSingleAnnotationTest {
 
    private static final int ANNOTATION = 2;
@@ -29,12 +33,18 @@ public final class ResultSingleAnnotationTest {
    private transient ResultSingleAnnotation resultSingleAnnotation;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       resultSingleAnnotation = new ResultSingleAnnotation(ANNOTATION, TOKEN);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSingleAnnotation() {
       assertEquals("Annotation not right", ANNOTATION, resultSingleAnnotation.getAnnotation());
@@ -42,12 +52,18 @@ public final class ResultSingleAnnotationTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotation() {
       assertEquals("Annotation not right", ANNOTATION, resultSingleAnnotation.getAnnotation());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetToken() {
       assertEquals("token not right", TOKEN, resultSingleAnnotation.getToken());

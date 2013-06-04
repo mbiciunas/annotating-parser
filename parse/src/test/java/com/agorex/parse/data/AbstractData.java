@@ -16,16 +16,23 @@
 package com.agorex.parse.data;
 
 
+/**
+ * @author mbiciunas
+ *
+ */
 public abstract class AbstractData {
 
    private final transient Data data;
 
 
+   /**
+    *
+    */
    protected AbstractData() {
       data = makeData();
 
       loadToken(data.getToken());
-      loadAnnotationState(data.getAnnotation());
+      loadAnnotationState(data.getAnnotationState());
       loadAllBracket(data.getAllBracket());
       loadAllAnnotation(data.getAllAnnotation());
       loadAllLandmark(data.getAllLandmark());
@@ -34,30 +41,57 @@ public abstract class AbstractData {
    }
 
 
+   /**
+    * @return object containing statement and correct processing data
+    */
    protected abstract Data makeData();
 
 
+   /**
+    * @param dataToken set of tokens for the statement
+    */
    protected abstract void loadToken(final DataToken dataToken);
 
 
+   /**
+    * @param dataAnnotationState annotation state for the statement
+    */
    protected abstract void loadAnnotationState(final DataAnnotationState dataAnnotationState);
 
 
+   /**
+    * @param dataAllBracket set of brackets that exist for the statement
+    */
    protected abstract void loadAllBracket(final DataAllBracket dataAllBracket);
 
 
+   /**
+    * @param dataAllAnnotation set of annotations that exist for the statement
+    */
    protected abstract void loadAllAnnotation(final DataAllAnnotation dataAllAnnotation);
 
 
+   /**
+    * @param dataAllLandmark set of landmarks that exist for the statement
+    */
    protected abstract void loadAllLandmark(final DataAllLandmark dataAllLandmark);
 
 
+   /**
+    * @param dataAllLandmarkForward set of forward landmarks that exist for the statement
+    */
    protected abstract void loadAllLandmarkForward(final DataAllLandmarkForward dataAllLandmarkForward);
 
 
+   /**
+    * @param dataAllLandmarkRange set of landmark ranges that exist for the statement
+    */
    protected abstract void loadAllLandmarkRange(final DataAllLandmarkRange dataAllLandmarkRange);
 
 
+   /**
+    * @return object containing statement and correct processing data
+    */
    public final Data getData() {
       return data;
    }

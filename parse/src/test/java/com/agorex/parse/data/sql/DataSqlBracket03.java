@@ -27,8 +27,15 @@ import com.agorex.parse.data.DataAllLandmarkRange;
 import com.agorex.parse.data.DataAnnotationState;
 import com.agorex.parse.data.DataToken;
 
+/**
+ * @author mbiciunas
+ *
+ */
 final class DataSqlBracket03 extends AbstractData {
 
+   /**
+    *
+    */
    DataSqlBracket03() {
       super();
    }

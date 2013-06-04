@@ -20,43 +20,53 @@ import static org.junit.Assert.assertEquals;
 
 import com.agorex.parse.search.landmark.ResultSetLandmark;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public abstract class AbstractTestResultSetLandmark extends AbstractTest {
 
-   protected final boolean validate(final String className, final ResultSetLandmark correctResultSet, final ResultSetLandmark resultSet) {
-      final int size = resultSet.getSize();
+   /**
+    * @param className name of the class that is being tested
+    * @param expectedResultSet known correct result set
+    * @param actualResultSet result set generated during test
+    * @return true if actual result set matches expected result set
+    */
+   protected final boolean validate(final String className, final ResultSetLandmark expectedResultSet, final ResultSetLandmark actualResultSet) {
+      final int size = actualResultSet.getSize();
       String landmark;
       String correctLandmark;
-//output(className, correctResultSetLandmark, resultSetLandmark);
-      assertEquals(className + " - Number of token ranges", correctResultSet.getSize(), size);
+//output(className, expectedResultSetLandmark, resultSetLandmark);
+      assertEquals(className + " - Number of token ranges", expectedResultSet.getSize(), size);
 
       for (int index = 0; index <= size; ++index) {
-         landmark = String.copyValueOf(resultSet.getLandmark(index));
-         correctLandmark = String.copyValueOf(correctResultSet.getLandmark(index));
+         landmark = String.copyValueOf(actualResultSet.getLandmark(index));
+         correctLandmark = String.copyValueOf(expectedResultSet.getLandmark(index));
 
          assertEquals(className + " - landmark", correctLandmark, landmark);
-         assertEquals(className + " - token", correctResultSet.getToken(index), resultSet.getToken(index));
+         assertEquals(className + " - token", expectedResultSet.getToken(index), actualResultSet.getToken(index));
       }
 
       return true;
    }
 
 
-//   private void output(final String className, final ResultSetLandmark correctResultSet, final ResultSetLandmark resultSet) {
+//   private void output(final String className, final ResultSetLandmark expectedResultSet, final ResultSetLandmark actualResultSet) {
 //      System.out.println("*** " + className + " ***");
-//      System.out.println("  Generated Max Index: " + resultSet.getSize());
+//      System.out.println("  Actual Max Index: " + actualResultSet.getSize());
 //
-//      for (int index = 0; index <= resultSet.getSize(); ++index) {
-//         System.out.println("    Generated Landmark: " + String.copyValueOf(resultSet.getLandmark(index)) + "  Token: " + resultSet.getToken(index));
+//      for (int index = 0; index <= actualResultSet.getSize(); ++index) {
+//         System.out.println("    Actual Landmark: " + String.copyValueOf(actualResultSet.getLandmark(index)) + "  Token: " + actualResultSet.getToken(index));
 //      }
 //
 //      System.out.println();
-//      System.out.println("  Calculated Max Index: " + correctResultSet.getSize());
+//      System.out.println("  Expected Max Index: " + expectedResultSet.getSize());
 //
-//      for (int index = 0; index <= correctResultSet.getSize(); ++index) {
-//         System.out.print("    Calculated Landmark: ");
-//         System.out.print(String.copyValueOf(correctResultSet.getLandmark(index)));
+//      for (int index = 0; index <= expectedResultSet.getSize(); ++index) {
+//         System.out.print("    Expected Landmark: ");
+//         System.out.print(String.copyValueOf(expectedResultSet.getLandmark(index)));
 //         System.out.print("  Token: ");
-//         System.out.print(correctResultSet.getToken(index));
+//         System.out.print(expectedResultSet.getToken(index));
 //         System.out.println();
 //      }
 //

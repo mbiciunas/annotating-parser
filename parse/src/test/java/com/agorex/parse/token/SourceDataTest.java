@@ -22,6 +22,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class SourceDataTest {
 
    private static final String SOURCE_STRING_1 = "This is The first Source string";
@@ -30,12 +34,18 @@ public final class SourceDataTest {
    private transient SourceData sourceData;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       sourceData = new SourceData();
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       sourceData.initialize(SOURCE_STRING_1);
@@ -44,6 +54,9 @@ public final class SourceDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSourceLength() {
       sourceData.initialize(SOURCE_STRING_1);
@@ -52,6 +65,9 @@ public final class SourceDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetCharacter() {
       sourceData.initialize(SOURCE_STRING_1);
@@ -60,6 +76,9 @@ public final class SourceDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSource() {
       sourceData.initialize(SOURCE_STRING_1);
@@ -68,6 +87,9 @@ public final class SourceDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetToken() {
       final TokenData tokenData = new TokenData(3);
@@ -84,6 +106,9 @@ public final class SourceDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetTokenLowerCase() {
       final TokenData tokenData = new TokenData(3);
@@ -100,6 +125,9 @@ public final class SourceDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testCompareLowerCase() {
       final TokenData tokenData = new TokenData(3);

@@ -28,8 +28,21 @@ public final class DataArray {
    private final transient List<Data> arrayData = new ArrayList<Data>();
 
 
-   public void addData(final Data dataInput) { arrayData.add(dataInput); }
+   /**
+    * @param data object containing the statement and correct parsing data
+    */
+   public void addData(final Data data) { arrayData.add(data); }
+
+
+   /**
+    * @param index position in the data set
+    * @return object containing a statement and correct parsing data for that statement
+    */
    public Data getData(final int index) { return arrayData.get(index); }
 
+
+   /**
+    * @return number of data objects
+    */
    public int size() { return arrayData.size(); }
 }

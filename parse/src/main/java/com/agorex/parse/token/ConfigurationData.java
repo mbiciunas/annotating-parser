@@ -21,7 +21,14 @@ package com.agorex.parse.token;
  */
 public final class ConfigurationData {
 
+   /**
+    * Skip over the character.  Used mostly for spaces.
+    */
    public static final int ACTION_SKIP = 1;
+
+   /**
+    * Annotate the character.
+    */
    public static final int ACTION_ANNOTATE = 2;
 
    private transient int annotationQuoteSingle = -1;

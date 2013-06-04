@@ -24,8 +24,15 @@ import com.agorex.parse.AbstractTestResultSetTokenRange;
 import com.agorex.parse.data.Data;
 import com.agorex.parse.search.ResultSetTokenRange;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class FindAllBracketTest extends AbstractTestResultSetTokenRange {
 
+   /**
+    *
+    */
    @Test
    public void testEmbeddedExclusive() {
       for (int index = 0; index < getDataArray().size(); ++index) {

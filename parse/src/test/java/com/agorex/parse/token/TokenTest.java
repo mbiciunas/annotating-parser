@@ -24,8 +24,15 @@ import org.junit.Test;
 import com.agorex.parse.AbstractTest;
 import com.agorex.parse.data.Data;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class TokenTest extends AbstractTest {
 
+   /**
+    *
+    */
    @Test
    public void testParse() {
       for (int index = 0; index < super.getDataArraySize(); ++index) {

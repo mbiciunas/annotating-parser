@@ -18,31 +18,55 @@ package com.agorex.parse.data;
 import com.agorex.parse.token.TokenData;
 
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class DataToken {
 
    private final transient TokenData tokenData = new TokenData(100);
 
 
+   /**
+    * @param pointerStart position of the start of the token
+    * @param pointerEnd position of the start of the token
+    * @param annotation value of the annotation
+    */
    public void add(final int pointerStart, final int pointerEnd, final int annotation) {
       tokenData.add(pointerStart, pointerEnd, annotation);
    }
 
 
+   /**
+    * @return number of entries in the token set
+    */
    public int getSize() {
       return tokenData.getSize();
    }
 
 
+   /**
+    * @param index position in the token set
+    * @return value of pointer at start of token
+    */
    public int getPointerStart(final int index) {
       return tokenData.getStartPointer(index);
    }
 
 
+   /**
+    * @param index position in the token set
+    * @return value of pointer at end of token
+    */
    public int getPointerEnd(final int index) {
       return tokenData.getEndPointer(index);
    }
 
 
+   /**
+    * @param index position in the token set
+    * @return value of annotation
+    */
    public int getAnnotation(final int index) {
       return tokenData.getAnnotation(index);
    }

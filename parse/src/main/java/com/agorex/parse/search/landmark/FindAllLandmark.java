@@ -44,7 +44,7 @@ public final class FindAllLandmark {
     */
    public static ResultSetLandmark find(final ParseData parseData, final TokenRange tokenRange, final LandmarkData landmarkData) {
       final ResultSetLandmark resultSetLandmark = new ResultSetLandmark(10);
-      final AnnotationState annotationState = parseData.getStackAnnotation();
+      final AnnotationState annotationState = parseData.getAnnotationState();
       int tokenCurrent;
       int annotation;
 

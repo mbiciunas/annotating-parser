@@ -21,6 +21,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ConfigurationDataTest {
 
    private static final char CHARACTER_COLON = ':';
@@ -30,12 +34,18 @@ public final class ConfigurationDataTest {
    private transient ConfigurationData configurationData;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       configurationData = new ConfigurationData(2);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testConfigurationData() {
       configurationData = new ConfigurationData(3);
@@ -50,6 +60,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAdd() {
       configurationData.add(CHARACTER_COLON, ANNOTATION_COLON, ACTION_COLON);
@@ -60,6 +73,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotation() {
       configurationData.add(CHARACTER_COLON, ANNOTATION_COLON, ACTION_COLON);
@@ -68,6 +84,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotationQuoteSingle() {
       assertEquals("Single quote annotation should not be set", -1, configurationData.getAnnotationQuoteSingle());
@@ -78,6 +97,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSetAnnotationQuoteSingle() {
       configurationData.setAnnotationQuoteSingle(2);
@@ -86,6 +108,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotationQuoteDouble() {
       assertEquals("Double quote annotation should not be set", -1, configurationData.getAnnotationQuoteDouble());
@@ -96,6 +121,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSetAnnotationQuoteDouble() {
       configurationData.setAnnotationQuoteDouble(2);
@@ -104,6 +132,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotationBracketOpen() {
       assertEquals("Open bracket annotation should not be set", -1, configurationData.getAnnotationBracketOpen());
@@ -114,6 +145,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSetAnnotationBracketOpen() {
       configurationData.setAnnotationBracketOpen(2);
@@ -122,6 +156,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotationBracketClose() {
       assertEquals("Close bracket annotation should not be set", -1, configurationData.getAnnotationBracketClose());
@@ -132,6 +169,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSetAnnotationBracketClose() {
       configurationData.setAnnotationBracketClose(2);
@@ -140,6 +180,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAction() {
       configurationData.add(CHARACTER_COLON, ANNOTATION_COLON, ACTION_COLON);
@@ -148,6 +191,9 @@ public final class ConfigurationDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testFindCharacter() {
       configurationData.add(CHARACTER_COLON, ANNOTATION_COLON, ACTION_COLON);

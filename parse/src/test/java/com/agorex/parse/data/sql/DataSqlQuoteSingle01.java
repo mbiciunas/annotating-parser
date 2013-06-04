@@ -27,8 +27,15 @@ import com.agorex.parse.data.DataAllLandmarkRange;
 import com.agorex.parse.data.DataAnnotationState;
 import com.agorex.parse.data.DataToken;
 
+/**
+ * @author mbiciunas
+ *
+ */
 final class DataSqlQuoteSingle01 extends AbstractData {
 
+   /**
+    *
+    */
    DataSqlQuoteSingle01() {
       super();
    }

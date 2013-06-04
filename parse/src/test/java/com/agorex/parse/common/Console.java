@@ -39,6 +39,9 @@ public final class Console {
    }
 
 
+   /**
+    * @param parseData object containing all the parse data
+    */
    public static void outputOneLine(final ParseData parseData) {
       final int size = parseData.getToken().getSize();
 
@@ -51,6 +54,9 @@ public final class Console {
    }
 
 
+   /**
+    * @param parseData object containing all the parse data
+    */
    public static void outputFull(final ParseData parseData) {
       final TokenData tokenData = parseData.getToken();
       final int size = tokenData.getSize();

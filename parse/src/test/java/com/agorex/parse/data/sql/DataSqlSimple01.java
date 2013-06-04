@@ -33,6 +33,9 @@ import com.agorex.parse.data.DataToken;
  */
 final class DataSqlSimple01 extends AbstractData {
 
+   /**
+    *
+    */
    DataSqlSimple01() {
       super();
    }

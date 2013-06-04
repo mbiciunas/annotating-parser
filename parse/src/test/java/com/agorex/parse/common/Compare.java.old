@@ -30,6 +30,11 @@ public final class Compare {
    }
 
 
+   /**
+    * @param statement text to be tokenized
+    * @param parseData object containing all the parse data
+    * @return true if statement and results match
+    */
    public static boolean compare(final String statement, final ParseData parseData) {
       final String compareStatement;
       final String compareResult;

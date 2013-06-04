@@ -27,49 +27,74 @@ import com.agorex.parse.annotation.AnnotationState.BracketState;
 import com.agorex.parse.annotation.AnnotationState.QuoteState;
 import com.agorex.parse.data.Data;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class AnnotationStateTest extends AbstractTest {
 
+   /**
+    *
+    */
    @Test
    public void testGetBracketState() {
-      assertEquals("Bracket state should be " + BracketState.CLOSE, BracketState.CLOSE, super.getStackAnnotation().getBracketState());
+      assertEquals("Bracket state should be " + BracketState.CLOSE, BracketState.CLOSE, super.getAnnotationState().getBracketState());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetQuoteState() {
-      assertEquals("Quote state should be " + QuoteState.NONE, QuoteState.NONE, super.getStackAnnotation().getQuoteState());
+      assertEquals("Quote state should be " + QuoteState.NONE, QuoteState.NONE, super.getAnnotationState().getQuoteState());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetBracketStart() {
-      assertEquals("Bracket start should be -1", -1, super.getStackAnnotation().getBracketStart());
+      assertEquals("Bracket start should be -1", -1, super.getAnnotationState().getBracketStart());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetBracketEnd() {
-      assertEquals("Bracket end should be -1", -1, super.getStackAnnotation().getBracketEnd());
+      assertEquals("Bracket end should be -1", -1, super.getAnnotationState().getBracketEnd());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetBracketDepth() {
-      assertEquals("Bracket depth should be 0", 0, super.getStackAnnotation().getBracketDepth());
+      assertEquals("Bracket depth should be 0", 0, super.getAnnotationState().getBracketDepth());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
-      super.getStackAnnotation().initialize();
+      super.getAnnotationState().initialize();
 
-      assertSame("State should be normal", super.getStackAnnotation().getBracketState(), BracketState.CLOSE);
-      assertSame("Quote should be none", super.getStackAnnotation().getQuoteState(), QuoteState.NONE);
-      assertEquals("Bracket start should be -1", -1, super.getStackAnnotation().getBracketStart());
-      assertEquals("Bracket end should be -1", -1, super.getStackAnnotation().getBracketEnd());
+      assertSame("State should be normal", super.getAnnotationState().getBracketState(), BracketState.CLOSE);
+      assertSame("Quote should be none", super.getAnnotationState().getQuoteState(), QuoteState.NONE);
+      assertEquals("Bracket start should be -1", -1, super.getAnnotationState().getBracketStart());
+      assertEquals("Bracket end should be -1", -1, super.getAnnotationState().getBracketEnd());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testProcess() {
       for (int index = 0; index < super.getDataArraySize(); ++index) {
@@ -88,16 +113,16 @@ public final class AnnotationStateTest extends AbstractTest {
       for (tokenCurrent = 0; tokenCurrent <= super.getToken().getSize(); tokenCurrent++) {
          annotation = super.getToken().getAnnotation(tokenCurrent);
 
-         if (! super.getStackAnnotation().process(annotation, tokenCurrent, super.getParseData())) {
+         if (! super.getAnnotationState().process(annotation, tokenCurrent, super.getParseData())) {
             break;
          }
       }
 
-      assertEquals(data.getClassName() + " - Quote state", data.getAnnotation().getQuoteState(), super.getStackAnnotation().getQuoteState());
-      assertEquals(data.getClassName() + " - Bracket state", data.getAnnotation().getBracketState(), super.getStackAnnotation().getBracketState());
-      assertEquals(data.getClassName() + " - Bracket depth", data.getAnnotation().getBracketDepth(), super.getStackAnnotation().getBracketDepth());
-      assertEquals(data.getClassName() + " - Bracket start", data.getAnnotation().getBracketStart(), super.getStackAnnotation().getBracketStart());
-      assertEquals(data.getClassName() + " - Bracket end", data.getAnnotation().getBracketEnd(), super.getStackAnnotation().getBracketEnd());
+      assertEquals(data.getClassName() + " - Quote state", data.getAnnotationState().getQuoteState(), super.getAnnotationState().getQuoteState());
+      assertEquals(data.getClassName() + " - Bracket state", data.getAnnotationState().getBracketState(), super.getAnnotationState().getBracketState());
+      assertEquals(data.getClassName() + " - Bracket depth", data.getAnnotationState().getBracketDepth(), super.getAnnotationState().getBracketDepth());
+      assertEquals(data.getClassName() + " - Bracket start", data.getAnnotationState().getBracketStart(), super.getAnnotationState().getBracketStart());
+      assertEquals(data.getClassName() + " - Bracket end", data.getAnnotationState().getBracketEnd(), super.getAnnotationState().getBracketEnd());
 
       return true;
    }

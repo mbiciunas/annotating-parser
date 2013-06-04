@@ -23,8 +23,15 @@ import org.junit.Test;
 import com.agorex.parse.AbstractTestResultSetLandmark;
 import com.agorex.parse.data.Data;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class FindAllLandmarkTest extends AbstractTestResultSetLandmark {
 
+   /**
+    *
+    */
    @Test
    public void testFind() {
       for (int index = 0; index < super.getDataArraySize(); ++index) {

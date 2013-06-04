@@ -19,6 +19,10 @@ import com.agorex.parse.search.ResultSetTokenRange;
 import com.agorex.parse.search.landmark.LandmarkData;
 import com.agorex.parse.search.landmark.ResultSetLandmark;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class DataAllLandmarkForward {
 
 
@@ -27,9 +31,17 @@ public final class DataAllLandmarkForward {
    private final transient ResultSetTokenRange resultSetTokenRangeExclusive = new ResultSetTokenRange(10);
    private final transient ResultSetTokenRange resultSetTokenRangeInclusive = new ResultSetTokenRange(10);
 
+   /**
+    * @return all the landmarks
+    */
    public LandmarkData getLandmarkData() { return landmarkData; }
 
 
+   /**
+    * @param landmark value of the landmark
+    * @param token value used to end the first token range and start the second token range
+    * @param maxToken value used to end last token range
+    */
    public void addFirstAndLast(final char[] landmark, final int token, final int maxToken) {
 
       assert token <= maxToken : "Token " + token + " must be less than or equal to maximum token " + maxToken;
@@ -48,6 +60,10 @@ public final class DataAllLandmarkForward {
    }
 
 
+   /**
+    * @param landmark value of the landmark
+    * @param token value used to end the token range
+    */
    public void addFirst(final char[] landmark, final int token) {
 
       assert resultSetLandmark.getSize() < 0 : "Must be first annotation added";
@@ -56,7 +72,11 @@ public final class DataAllLandmarkForward {
    }
 
 
-   public void add(final char[] landmark, final int token) {
+   /**
+    * @param landmark value of the landmark
+    * @param token value used to end the token range
+    */
+   private void add(final char[] landmark, final int token) {
       final int previousToken;
 
       assert resultSetLandmark.getSize() >= 0 : "Must not be the first annotation added";
@@ -79,6 +99,11 @@ public final class DataAllLandmarkForward {
    }
 
 
+   /**
+    * @param landmark value of the landmark
+    * @param token value used to end the first token range and start the second token range
+    * @param maxToken value used to end last token range
+    */
    public void addLast(final char[] landmark, final int token, final int maxToken) {
 
       assert token <= maxToken : "Token " + token + " must be less than or equal to maximum token " + maxToken;
@@ -94,37 +119,63 @@ public final class DataAllLandmarkForward {
    }
 
 
-   public void addRange(final int tokenStartExclusive, final int tokenEndExclusive, final int tokenStartInclusive, final int tokenEndInclusive) {
-      resultSetTokenRangeExclusive.add(tokenStartExclusive, tokenEndExclusive);
-      resultSetTokenRangeInclusive.add(tokenStartInclusive, tokenEndInclusive);
-   }
+//   /**
+//    * @param tokenStartExclusive
+//    * @param tokenEndExclusive
+//    * @param tokenStartInclusive
+//    * @param tokenEndInclusive
+//    */
+//   public void addRange(final int tokenStartExclusive, final int tokenEndExclusive, final int tokenStartInclusive, final int tokenEndInclusive) {
+//      resultSetTokenRangeExclusive.add(tokenStartExclusive, tokenEndExclusive);
+//      resultSetTokenRangeInclusive.add(tokenStartInclusive, tokenEndInclusive);
+//   }
 
 
-   public int getSize() {
-      return resultSetLandmark.getSize();
-   }
+//   /**
+//    * @return number of entries in result set
+//    */
+//   public int getSize() {
+//      return resultSetLandmark.getSize();
+//   }
 
 
-   public int getRangeSize() {
-      return resultSetTokenRangeExclusive.getSize();
-   }
+//   /**
+//    * @return
+//    */
+//   public int getRangeSize() {
+//      return resultSetTokenRangeExclusive.getSize();
+//   }
 
 
-   public char[] getLandmark(final int index) {
-      return resultSetLandmark.getLandmark(index);
-   }
+//   /**
+//    * @param index position in the result set
+//    * @return
+//    */
+//   public char[] getLandmark(final int index) {
+//      return resultSetLandmark.getLandmark(index);
+//   }
 
 
-   public int getToken(final int index) {
+   /**
+    * @param index position in the result set
+    * @return
+    */
+   private int getToken(final int index) {
       return resultSetLandmark.getToken(index);
    }
 
 
+   /**
+    * @return token result set
+    */
    public ResultSetTokenRange getResultSetTokenRangeExclusive() {
       return resultSetTokenRangeExclusive;
    }
 
 
+   /**
+    * @return token result set
+    */
    public ResultSetTokenRange getResultSetTokenRangeInclusive() {
       return resultSetTokenRangeInclusive;
    }

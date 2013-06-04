@@ -22,6 +22,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ResultSingleLandmarkTest {
 
    private static final char[] LANDMARK = "test".toCharArray();
@@ -30,12 +34,18 @@ public final class ResultSingleLandmarkTest {
    private transient ResultSingleLandmark resultSingleLandmark;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       resultSingleLandmark = new ResultSingleLandmark(LANDMARK, TOKEN);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSingleLandmark() {
       assertArrayEquals("Landmark not right", LANDMARK, resultSingleLandmark.getLandmark());
@@ -43,12 +53,18 @@ public final class ResultSingleLandmarkTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetLandmark() {
       assertArrayEquals("Landmark not right", LANDMARK, resultSingleLandmark.getLandmark());
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetToken() {
       assertEquals("token not right", TOKEN, resultSingleLandmark.getToken());

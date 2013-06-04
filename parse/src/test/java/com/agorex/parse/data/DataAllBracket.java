@@ -17,34 +17,59 @@ package com.agorex.parse.data;
 
 import com.agorex.parse.search.ResultSetTokenRange;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class DataAllBracket {
 
    private final transient ResultSetTokenRange resultSetTokenRange = new ResultSetTokenRange(10);
 
 
-   public ResultSetTokenRange getResult() { return resultSetTokenRange; }
+//   /**
+//    * @return token result set
+//    */
+//   public ResultSetTokenRange getResult() { return resultSetTokenRange; }
 
 
+   /**
+    * @param tokenStart value used to start the token range
+    * @param tokenEnd value used to end the token range
+    */
    public void add(final int tokenStart, final int tokenEnd) {
       resultSetTokenRange.add(tokenStart, tokenEnd);
    }
 
 
+   /**
+    * @return token result set
+    */
    public ResultSetTokenRange getResultSetTokenRange() {
       return resultSetTokenRange;
    }
 
 
+   /**
+    * @return number of entries in result set
+    */
    public int getSize() {
       return resultSetTokenRange.getSize();
    }
 
 
+   /**
+    * @param index position in the result set
+    * @return value used to start the token range
+    */
    public int getTokenStart(final int index) {
       return resultSetTokenRange.getTokenRange(index).getTokenStart();
    }
 
 
+   /**
+    * @param index position in the result set
+    * @return value used to end the token range
+    */
    public int getTokenEnd(final int index) {
       return resultSetTokenRange.getTokenRange(index).getTokenEnd();
    }

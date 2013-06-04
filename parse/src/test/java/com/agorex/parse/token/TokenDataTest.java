@@ -23,6 +23,10 @@ import org.junit.Test;
 
 import com.agorex.parse.data.sql.ConfigurationSql;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class TokenDataTest {
 
    private static final int ANNOTATION_QUOTE_SINGLE = ConfigurationSql.ANNOTATION_QUOTE_SINGLE;
@@ -42,12 +46,18 @@ public final class TokenDataTest {
    private transient TokenData tokenData;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       tokenData = new TokenData(3);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testTokenData() {
       tokenData = new TokenData(3);
@@ -56,6 +66,9 @@ public final class TokenDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       tokenData.add(POINTER_QUOTE_SINGLE_START, POINTER_QUOTE_SINGLE_END, ANNOTATION_QUOTE_SINGLE);
@@ -66,6 +79,9 @@ public final class TokenDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSize() {
       tokenData.add(POINTER_QUOTE_SINGLE_START, POINTER_QUOTE_SINGLE_END, ANNOTATION_QUOTE_SINGLE);
@@ -74,6 +90,9 @@ public final class TokenDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAdd() {
       tokenData.add(POINTER_QUOTE_SINGLE_START, POINTER_QUOTE_SINGLE_END, ANNOTATION_QUOTE_SINGLE);
@@ -84,6 +103,9 @@ public final class TokenDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetStartPointer() {
       tokenData.add(POINTER_QUOTE_SINGLE_START, POINTER_QUOTE_SINGLE_END, ANNOTATION_QUOTE_SINGLE);
@@ -98,6 +120,9 @@ public final class TokenDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetEndPointer() {
       tokenData.add(POINTER_QUOTE_SINGLE_START, POINTER_QUOTE_SINGLE_END, ANNOTATION_QUOTE_SINGLE);
@@ -112,6 +137,9 @@ public final class TokenDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetAnnotation() {
       tokenData.add(POINTER_QUOTE_SINGLE_START, POINTER_QUOTE_SINGLE_END, ANNOTATION_QUOTE_SINGLE);
@@ -126,6 +154,9 @@ public final class TokenDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetTokenWidth() {
       tokenData.add(POINTER_QUOTE_SINGLE_START, POINTER_QUOTE_SINGLE_END, ANNOTATION_QUOTE_SINGLE);

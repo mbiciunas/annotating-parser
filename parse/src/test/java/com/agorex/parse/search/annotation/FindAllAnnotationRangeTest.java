@@ -24,8 +24,15 @@ import com.agorex.parse.AbstractTestResultSetTokenRange;
 import com.agorex.parse.data.Data;
 import com.agorex.parse.search.ResultSetTokenRange;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class FindAllAnnotationRangeTest extends AbstractTestResultSetTokenRange {
 
+   /**
+    *
+    */
    @Test
    public void testFindExclusive() {
       for (int index = 0; index < getDataArray().size(); ++index) {
@@ -34,6 +41,9 @@ public final class FindAllAnnotationRangeTest extends AbstractTestResultSetToken
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testFindInclusive() {
       for (int index = 0; index < getDataArray().size(); ++index) {

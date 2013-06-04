@@ -20,22 +20,32 @@ import static org.junit.Assert.assertEquals;
 
 import com.agorex.parse.search.ResultSetTokenRange;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public abstract class AbstractTestResultSetTokenRange extends AbstractTest {
 
-   protected final boolean validate(final String className, final ResultSetTokenRange correctResultSet, final ResultSetTokenRange resultSet) {
-      final int size = resultSet.getSize();
+   /**
+    * @param className name of the class that is being tested
+    * @param expectedResultSet known correct result set
+    * @param actualResultSet result set generated during test
+    * @return true if actual result set matches expected result set
+    */
+   protected final boolean validate(final String className, final ResultSetTokenRange expectedResultSet, final ResultSetTokenRange actualResultSet) {
+      final int size = actualResultSet.getSize();
       int resultTokenStart;
       int resultTokenEnd;
       int correctTokenStart;
       int correctTokenEnd;
-//output(className, correctResultSetTokenRange, resultSetTokenRange);
-      assertEquals(className + " - Number of token ranges", correctResultSet.getSize(), size);
+//output(className, expectedResultSetTokenRange, actualResultSetTokenRange);
+      assertEquals(className + " - Number of token ranges", expectedResultSet.getSize(), size);
 
       for (int index = 0; index <= size; ++index) {
-         resultTokenStart = resultSet.getTokenRange(index).getTokenStart();
-         resultTokenEnd = resultSet.getTokenRange(index).getTokenEnd();
-         correctTokenStart = correctResultSet.getTokenRange(index).getTokenStart();
-         correctTokenEnd = correctResultSet.getTokenRange(index).getTokenEnd();
+         resultTokenStart = actualResultSet.getTokenRange(index).getTokenStart();
+         resultTokenEnd = actualResultSet.getTokenRange(index).getTokenEnd();
+         correctTokenStart = expectedResultSet.getTokenRange(index).getTokenStart();
+         correctTokenEnd = expectedResultSet.getTokenRange(index).getTokenEnd();
 
          assertEquals(className + " - token start", correctTokenStart, resultTokenStart);
          assertEquals(className + " - token end", correctTokenEnd, resultTokenEnd);
@@ -45,26 +55,26 @@ public abstract class AbstractTestResultSetTokenRange extends AbstractTest {
    }
 
 
-//   private void output(final String className, final ResultSetTokenRange correctResultSet, final ResultSetTokenRange resultSet) {
+//   private void output(final String className, final ResultSetTokenRange expectedResultSet, final ResultSetTokenRange actualResultSet) {
 //      int resultTokenStart;
 //      int resultTokenEnd;
 //
 //      System.out.println("*** " + className + " ***");
-//      System.out.println("  Generated Max Index: " + resultSet.getSize());
+//      System.out.println("  Generated Max Index: " + actualResultSet.getSize());
 //
-//      for (int index = 0; index <= resultSet.getSize(); ++index) {
-//         resultTokenStart = resultSet.getTokenRange(index).getTokenStart();
-//         resultTokenEnd = resultSet.getTokenRange(index).getTokenEnd();
+//      for (int index = 0; index <= actualResultSet.getSize(); ++index) {
+//         resultTokenStart = actualResultSet.getTokenRange(index).getTokenStart();
+//         resultTokenEnd = actualResultSet.getTokenRange(index).getTokenEnd();
 //
 //         System.out.println("    Generated Token Start: " + resultTokenStart + "  Token End: " + resultTokenEnd);
 //      }
 //
 //      System.out.println();
-//      System.out.println("  Calculated Max Index: " + correctResultSet.getSize());
+//      System.out.println("  Calculated Max Index: " + expectedResultSet.getSize());
 //
-//      for (int index = 0; index <= correctResultSet.getSize(); ++index) {
-//         resultTokenStart = correctResultSet.getTokenRange(index).getTokenStart();
-//         resultTokenEnd = correctResultSet.getTokenRange(index).getTokenEnd();
+//      for (int index = 0; index <= expectedResultSet.getSize(); ++index) {
+//         resultTokenStart = expectedResultSet.getTokenRange(index).getTokenStart();
+//         resultTokenEnd = expectedResultSet.getTokenRange(index).getTokenEnd();
 //
 //         System.out.println("    Calculated Token Start: " + resultTokenStart + "  Token End: " + resultTokenEnd);
 //      }

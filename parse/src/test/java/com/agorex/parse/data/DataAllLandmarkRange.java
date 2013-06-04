@@ -19,6 +19,10 @@ import com.agorex.parse.search.ResultSetTokenRange;
 import com.agorex.parse.search.landmark.LandmarkData;
 import com.agorex.parse.search.landmark.ResultSetLandmark;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class DataAllLandmarkRange {
 
    private final transient LandmarkData landmarkData = new LandmarkData(10);
@@ -26,9 +30,18 @@ public final class DataAllLandmarkRange {
    private final transient ResultSetTokenRange resultSetTokenRangeExclusive = new ResultSetTokenRange(10);
    private final transient ResultSetTokenRange resultSetTokenRangeInclusive = new ResultSetTokenRange(10);
 
+   /**
+    * @return set of landmarks
+    */
    public LandmarkData getLandmarkData() { return landmarkData; }
 
 
+   /**
+    * @param landmark value of the landmark
+    * @param minToken value used to start first token range
+    * @param token value used to end the first token range and start the second token range
+    * @param maxToken value used to end last token range
+    */
    public void addFirstAndLast(final char[] landmark, final int minToken, final int token, final int maxToken) {
       assert minToken <= token : "Minimum token " + minToken + " must be less than or equal to token " + token;
       assert resultSetLandmark.getSize() < 0 : "Must be first landmark added";
@@ -47,6 +60,11 @@ public final class DataAllLandmarkRange {
    }
 
 
+   /**
+    * @param landmark value of the landmark
+    * @param minToken value used to start the token range
+    * @param token value used to end the token range
+    */
    public void addFirst(final char[] landmark, final int minToken, final int token) {
 
       assert minToken <= token : "Minimum token " + minToken + " must be less than or equal to token " + token;
@@ -62,7 +80,11 @@ public final class DataAllLandmarkRange {
    }
 
 
-   public void add(final char[] landmark, final int token) {
+   /**
+    * @param landmark value of the landmark
+    * @param token value used to end the token range
+    */
+   private void add(final char[] landmark, final int token) {
       final int previousToken;
 
       assert resultSetLandmark.getSize() >= 0 : "Must not be the first annotation added";
@@ -85,6 +107,11 @@ public final class DataAllLandmarkRange {
    }
 
 
+   /**
+    * @param landmark value of the landmark
+    * @param token value used to start the token range
+    * @param maxToken token used to end the token range
+    */
    public void addLast(final char[] landmark, final int token, final int maxToken) {
 
       assert token <= maxToken : "Token " + token + " must be less than or equal to maximum token " + maxToken;
@@ -100,11 +127,17 @@ public final class DataAllLandmarkRange {
    }
 
 
+   /**
+    * @return token result set
+    */
    public ResultSetTokenRange getResultSetTokenRangeExclusive() {
       return resultSetTokenRangeExclusive;
    }
 
 
+   /**
+    * @return token result set
+    */
    public ResultSetTokenRange getResultSetTokenRangeInclusive() {
       return resultSetTokenRangeInclusive;
    }

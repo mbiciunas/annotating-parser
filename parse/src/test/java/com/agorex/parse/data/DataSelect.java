@@ -38,6 +38,9 @@ public final class DataSelect {
    }
 
 
+   /**
+    * @return random statement
+    */
    public static String random() {
       if (arraySize == 0) {
          makeRandom();

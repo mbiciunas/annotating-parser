@@ -22,6 +22,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ResultSetLandmarkTest {
 
    private static final char[] LANDMARK_SELECT = "select".toCharArray();
@@ -37,12 +41,18 @@ public final class ResultSetLandmarkTest {
    private transient ResultSetLandmark resultSetLandmark;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       resultSetLandmark = new ResultSetLandmark(2);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSetLandmark() {
       resultSetLandmark = new ResultSetLandmark(2);
@@ -51,6 +61,9 @@ public final class ResultSetLandmarkTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       resultSetLandmark.add(LANDMARK_SELECT, TOKEN_SELECT);
@@ -61,6 +74,9 @@ public final class ResultSetLandmarkTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSize() {
       resultSetLandmark.add(LANDMARK_SELECT, TOKEN_SELECT);
@@ -69,6 +85,9 @@ public final class ResultSetLandmarkTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetLandmark() {
       resultSetLandmark.add(LANDMARK_SELECT, TOKEN_SELECT);
@@ -77,6 +96,9 @@ public final class ResultSetLandmarkTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetToken() {
       resultSetLandmark.add(LANDMARK_SELECT, TOKEN_SELECT);
@@ -85,6 +107,9 @@ public final class ResultSetLandmarkTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAdd() {
       resultSetLandmark.add(LANDMARK_SELECT, TOKEN_SELECT);
@@ -94,6 +119,9 @@ public final class ResultSetLandmarkTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSort() {
       resultSetLandmark.add(LANDMARK_GROUP_BY, TOKEN_GROUP_BY);

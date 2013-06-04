@@ -18,6 +18,10 @@ package com.agorex.parse.data;
 import com.agorex.parse.annotation.AnnotationState.BracketState;
 import com.agorex.parse.annotation.AnnotationState.QuoteState;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class DataAnnotationState {
 
    private transient QuoteState quoteState;
@@ -27,18 +31,62 @@ public final class DataAnnotationState {
    private transient int bracketEnd;
 
 
+   /**
+    * @return quote state
+    */
    public QuoteState getQuoteState() { return quoteState; }
+
+
+   /**
+    * @param quoteState new state of the quotes
+    */
    public void setQuoteState(final QuoteState quoteState) { this.quoteState = quoteState; };
 
+
+   /**
+    * @return bracket state
+    */
    public BracketState getBracketState() { return bracketState; }
+
+
+   /**
+    * @param bracketState new state of the brackets
+    */
    public void setBracketState(final BracketState bracketState) { this.bracketState = bracketState; };
 
+
+   /**
+    * @return number of bracket sets we have entered
+    */
    public int getBracketDepth() { return bracketDepth; }
+
+
+   /**
+    * @param bracketDepth new number of bracket sets
+    */
    public void setBracketDepth(final int bracketDepth) { this.bracketDepth = bracketDepth; };
 
+
+   /**
+    * @return token value for the start of the bracket
+    */
    public int getBracketStart() { return bracketStart; }
+
+
+   /**
+    * @param bracketStart token value for the start of the bracket
+    */
    public void setBracketStart(final int bracketStart) { this.bracketStart = bracketStart; };
 
+
+   /**
+    * @return token value for the end of the bracket
+    */
    public int getBracketEnd() { return bracketEnd; }
+
+
+   /**
+    * @param bracketEnd token value for the end of the bracket
+    */
    public void setBracketEnd(final int bracketEnd) { this.bracketEnd = bracketEnd; };
 }

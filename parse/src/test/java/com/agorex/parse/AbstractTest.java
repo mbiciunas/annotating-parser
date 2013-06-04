@@ -27,6 +27,14 @@ import com.agorex.parse.search.TokenRange;
 import com.agorex.parse.token.Token;
 import com.agorex.parse.token.TokenData;
 
+/**
+ * @author mbiciunas
+ *
+ */
+/**
+ * @author mbiciunas
+ *
+ */
 public abstract class AbstractTest {
 
    private transient ParseData parseData;
@@ -34,34 +42,62 @@ public abstract class AbstractTest {
    private transient TokenRange tokenRange;
 
 
+   /**
+    *
+    */
    @Before
-   public final void setUp() throws Exception {
+   public final void setUp() {
       dataArray = new DataSql().getDataArray();
       parseData = new ParseData(ConfigurationSql.getConfiguration());
    }
 
 
+   /**
+    * @return object containing all the parse data
+    */
    protected final ParseData getParseData() { return parseData; }
 
 
+   /**
+    * @return set of tokens
+    */
    protected final TokenData getToken() { return parseData.getToken(); }
 
 
-   protected final AnnotationState getStackAnnotation() { return parseData.getStackAnnotation(); }
+   /**
+    * @return annotation state
+    */
+   protected final AnnotationState getAnnotationState() { return parseData.getAnnotationState(); }
 
 
+   /**
+    * @return number of data objects
+    */
    protected final int getDataArraySize() { return dataArray.size(); }
 
 
+   /**
+    * @param index position in the data array
+    * @return object containing a statement and correct parsing data for that statement
+    */
    protected final Data getDataArrayData(final int index) { return dataArray.getData(index); }
 
 
+   /**
+    * @return set of objects containing a statement and correct parsing data
+    */
    protected final DataArray getDataArray() { return dataArray; }
 
 
+   /**
+    * @return range of tokens to be searched
+    */
    protected final TokenRange getResultSingleTokenRange() { return tokenRange; }
 
 
+   /**
+    * @param statement text to be tokenized
+    */
    protected final void initialize(final String statement) {
 
       parseData.initialize(statement);

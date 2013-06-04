@@ -17,11 +17,18 @@ package com.agorex.parse.data.sql;
 
 import com.agorex.parse.data.DataArray;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class DataSql {
 
    private final transient DataArray dataArray = new DataArray();
 
 
+   /**
+    *
+    */
    public DataSql() {
       dataArray.addData(new DataSqlSimple01().getData());
       dataArray.addData(new DataSqlBracket01().getData());
@@ -44,5 +51,8 @@ public final class DataSql {
    }
 
 
+   /**
+    * @return set of sql statements to be tested
+    */
    public DataArray getDataArray() { return dataArray; }
 }

@@ -21,17 +21,27 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class TokenRangeTest {
 
    private transient TokenRange tokenRange;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       tokenRange = new TokenRange();
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSingleTokenRange() {
       tokenRange = new TokenRange();
@@ -43,6 +53,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSingleTokenRangeIntInt() {
       tokenRange = new TokenRange(3, 7);
@@ -54,6 +67,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSingleTokenRangeStringIntInt() {
       tokenRange = new TokenRange("test", 3, 7);
@@ -65,6 +81,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetName() {
       tokenRange = new TokenRange("test", 3, 7);
@@ -73,6 +92,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSetName() {
       tokenRange.setName("test");
@@ -81,6 +103,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetTokenStart() {
       tokenRange = new TokenRange(3, 7);
@@ -89,6 +114,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSetStart() {
       tokenRange.setStart(3);
@@ -97,6 +125,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetTokenEnd() {
       tokenRange = new TokenRange(3, 7);
@@ -105,6 +136,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testSetEnd() {
       tokenRange.setEnd(7);
@@ -113,6 +147,9 @@ public final class TokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetWidth() {
       tokenRange = new TokenRange(3, 7);

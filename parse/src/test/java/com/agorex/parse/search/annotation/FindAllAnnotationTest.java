@@ -24,8 +24,15 @@ import org.junit.Test;
 import com.agorex.parse.AbstractTest;
 import com.agorex.parse.data.Data;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class FindAllAnnotationTest extends AbstractTest {
 
+   /**
+    *
+    */
    @Test
    public void testFind() {
       for (int index = 0; index < super.getDataArraySize(); ++index) {

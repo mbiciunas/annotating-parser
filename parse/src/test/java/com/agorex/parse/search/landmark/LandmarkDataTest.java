@@ -22,6 +22,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class LandmarkDataTest {
 
    private static final String LANDMARK_SELECT = "Select";
@@ -35,12 +39,18 @@ public final class LandmarkDataTest {
    private transient LandmarkData landmarkData;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       landmarkData = new LandmarkData(2);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testLandmarkDataCharArrayArray() {
       landmarkData = new LandmarkData(LANDMARK_CHAR_SELECT, LANDMARK_CHAR_FROM, LANDMARK_CHAR_WHERE);
@@ -52,6 +62,9 @@ public final class LandmarkDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testLandmarkDataInt() {
       landmarkData = new LandmarkData(2);
@@ -67,6 +80,9 @@ public final class LandmarkDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       landmarkData.add(LANDMARK_SELECT);
@@ -77,6 +93,9 @@ public final class LandmarkDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSize() {
       landmarkData.add(LANDMARK_SELECT);
@@ -85,6 +104,9 @@ public final class LandmarkDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAdd() {
       landmarkData.add(LANDMARK_SELECT);
@@ -98,6 +120,9 @@ public final class LandmarkDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetLandmark() {
       landmarkData.add(LANDMARK_SELECT);

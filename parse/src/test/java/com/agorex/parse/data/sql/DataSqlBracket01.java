@@ -27,13 +27,23 @@ import com.agorex.parse.data.DataAllLandmarkRange;
 import com.agorex.parse.data.DataAnnotationState;
 import com.agorex.parse.data.DataToken;
 
+/**
+ * @author mbiciunas
+ *
+ */
 final class DataSqlBracket01 extends AbstractData {
 
+   /**
+    *
+    */
    DataSqlBracket01() {
       super();
    }
 
 
+   /* (non-Javadoc)
+    * @see com.agorex.parse.data.AbstractData#makeData()
+    */
    @Override
    public Data makeData() {
       final Data data = new Data();

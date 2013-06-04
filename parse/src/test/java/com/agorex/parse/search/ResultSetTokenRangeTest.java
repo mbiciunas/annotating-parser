@@ -21,6 +21,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ResultSetTokenRangeTest {
 
    private static final int ANNOTATION_SELECT = 1;
@@ -31,12 +35,18 @@ public final class ResultSetTokenRangeTest {
    private transient ResultSetTokenRange resultSetTokenRange;
 
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       resultSetTokenRange = new ResultSetTokenRange(2);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testResultSetTokenRange() {
       resultSetTokenRange = new ResultSetTokenRange(2);
@@ -45,6 +55,9 @@ public final class ResultSetTokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       resultSetTokenRange.add(TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
@@ -55,6 +68,9 @@ public final class ResultSetTokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSize() {
       resultSetTokenRange.add(TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
@@ -63,6 +79,9 @@ public final class ResultSetTokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAddIntInt() {
       resultSetTokenRange.add(TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
@@ -72,6 +91,9 @@ public final class ResultSetTokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAddCharArrayIntInt() {
       resultSetTokenRange.add(TOKEN_RANGE_SELECT.getName().toCharArray(), TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
@@ -82,6 +104,9 @@ public final class ResultSetTokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAddIntIntInt() {
       resultSetTokenRange.add(ANNOTATION_SELECT, TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
@@ -92,6 +117,9 @@ public final class ResultSetTokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetTokenRange() {
       resultSetTokenRange.add(TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
@@ -101,6 +129,9 @@ public final class ResultSetTokenRangeTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testFind() {
       TokenRange result;

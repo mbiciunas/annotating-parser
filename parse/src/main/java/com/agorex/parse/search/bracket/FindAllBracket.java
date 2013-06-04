@@ -41,7 +41,7 @@ public final class FindAllBracket {
     */
    public static ResultSetTokenRange findExclusive(final ParseData parseData, final TokenRange tokenRange) {
       final ResultSetTokenRange resultSetTokenRange = new ResultSetTokenRange(10);
-      final AnnotationState annotationState = parseData.getStackAnnotation();
+      final AnnotationState annotationState = parseData.getAnnotationState();
       final int bracketClose = parseData.getConfigurationData().getAnnotationBracketClose();
       int tokenCurrent;
       int annotation;

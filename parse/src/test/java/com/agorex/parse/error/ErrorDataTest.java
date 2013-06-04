@@ -23,6 +23,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author mbiciunas
+ *
+ */
 public final class ErrorDataTest {
 
    private static final String ERROR_1 = "This is the first error";
@@ -32,12 +36,18 @@ public final class ErrorDataTest {
 
    private transient ErrorData errorData;
 
+   /**
+    *
+    */
    @Before
    public void setUp() {
       errorData = new ErrorData(3);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testErrorData() {
       errorData = new ErrorData(2);
@@ -46,6 +56,9 @@ public final class ErrorDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testInitialize() {
       errorData.add(ERROR_1);
@@ -56,6 +69,9 @@ public final class ErrorDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetSize() {
       errorData.add(ERROR_1);
@@ -64,6 +80,9 @@ public final class ErrorDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testAdd() {
       errorData.add(ERROR_1);
@@ -72,6 +91,9 @@ public final class ErrorDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testGetError() {
       errorData.add(ERROR_1);
@@ -86,18 +108,27 @@ public final class ErrorDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test(expected = IllegalArgumentException.class)
    public void testGetErrorInvalid() {
       errorData.getError(0);
    }
 
 
+   /**
+    *
+    */
    @Test(expected = IllegalArgumentException.class)
    public void testGetErrorNegative() {
       errorData.getError(-1);
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testIsErrorFree() {
       assertTrue("Error data should be empty", errorData.isErrorFree());
@@ -108,6 +139,9 @@ public final class ErrorDataTest {
    }
 
 
+   /**
+    *
+    */
    @Test
    public void testIsErrors() {
       assertFalse("Error data should be empty", errorData.isErrors());

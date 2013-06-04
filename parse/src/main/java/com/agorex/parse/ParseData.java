@@ -75,7 +75,7 @@ public final class ParseData {
    /**
     * @return stack used during source processing
     */
-   public AnnotationState getStackAnnotation() { return annotationState; }
+   public AnnotationState getAnnotationState() { return annotationState; }
 
 
    /**
