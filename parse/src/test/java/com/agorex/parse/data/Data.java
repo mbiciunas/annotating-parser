@@ -44,7 +44,7 @@ public final class Data {
    /**
     * @param statement text to be tokenized
     */
-   public void setStatement(final String statement) { this.statement = statement; };
+   public void setStatement(final String statement) { this.statement = statement; }
 
 
    /**
@@ -56,7 +56,7 @@ public final class Data {
    /**
     * @param description printable description of the statement
     */
-   public void setDescription(final String description) { this.description = description; };
+   public void setDescription(final String description) { this.description = description; }
 
 
    /**
@@ -68,7 +68,7 @@ public final class Data {
    /**
     * @param className name of the class that is being tested
     */
-   public void setClassName(final String className) { this.className = className; };
+   public void setClassName(final String className) { this.className = className; }
 
 
    /**

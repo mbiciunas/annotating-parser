@@ -88,6 +88,8 @@ public final class ResultSetLandmark extends AbstractResizable {
    private static class ComparatorToken implements Comparator<ResultSingleLandmark>, Serializable {
       private static final long serialVersionUID = 1L;
 
+      public ComparatorToken() { }
+
       @Override
       public int compare(final ResultSingleLandmark result1, final ResultSingleLandmark result2) {
          final int compare;

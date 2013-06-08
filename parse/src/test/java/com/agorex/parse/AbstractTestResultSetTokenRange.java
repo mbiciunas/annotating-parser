@@ -32,7 +32,7 @@ public abstract class AbstractTestResultSetTokenRange extends AbstractTest {
     * @param actualResultSet result set generated during test
     * @return true if actual result set matches expected result set
     */
-   protected final boolean validate(final String className, final ResultSetTokenRange expectedResultSet, final ResultSetTokenRange actualResultSet) {
+   protected static final boolean validate(final String className, final ResultSetTokenRange expectedResultSet, final ResultSetTokenRange actualResultSet) {
       final int size = actualResultSet.getSize();
       int resultTokenStart;
       int resultTokenEnd;

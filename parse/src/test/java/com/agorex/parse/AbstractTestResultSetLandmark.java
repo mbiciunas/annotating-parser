@@ -32,7 +32,7 @@ public abstract class AbstractTestResultSetLandmark extends AbstractTest {
     * @param actualResultSet result set generated during test
     * @return true if actual result set matches expected result set
     */
-   protected final boolean validate(final String className, final ResultSetLandmark expectedResultSet, final ResultSetLandmark actualResultSet) {
+   protected static final boolean validate(final String className, final ResultSetLandmark expectedResultSet, final ResultSetLandmark actualResultSet) {
       final int size = actualResultSet.getSize();
       String landmark;
       String correctLandmark;

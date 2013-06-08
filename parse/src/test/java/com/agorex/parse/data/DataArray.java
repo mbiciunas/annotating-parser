@@ -25,7 +25,7 @@ import java.util.List;
  */
 public final class DataArray {
 
-   private final transient List<Data> arrayData = new ArrayList<Data>();
+   private final transient List<Data> arrayData = new ArrayList<>();
 
 
    /**

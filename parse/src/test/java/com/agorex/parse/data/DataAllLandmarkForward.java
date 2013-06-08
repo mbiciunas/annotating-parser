@@ -74,33 +74,6 @@ public final class DataAllLandmarkForward {
 
    /**
     * @param landmark value of the landmark
-    * @param token value used to end the token range
-    */
-   private void add(final char[] landmark, final int token) {
-      final int previousToken;
-
-      assert resultSetLandmark.getSize() >= 0 : "Must not be the first annotation added";
-
-      //
-      // Get the last token added.
-      //
-      previousToken = getToken(resultSetLandmark.getSize());
-
-      //
-      // Add a landmark.
-      //
-      resultSetLandmark.add(landmark, token);
-
-      //
-      // Add landmark range.
-      //
-      resultSetTokenRangeExclusive.add(previousToken + 1, token - 1);
-      resultSetTokenRangeInclusive.add(previousToken, token);
-   }
-
-
-   /**
-    * @param landmark value of the landmark
     * @param token value used to end the first token range and start the second token range
     * @param maxToken value used to end last token range
     */
@@ -157,15 +130,6 @@ public final class DataAllLandmarkForward {
 
 
    /**
-    * @param index position in the result set
-    * @return
-    */
-   private int getToken(final int index) {
-      return resultSetLandmark.getToken(index);
-   }
-
-
-   /**
     * @return token result set
     */
    public ResultSetTokenRange getResultSetTokenRangeExclusive() {
@@ -178,5 +142,37 @@ public final class DataAllLandmarkForward {
     */
    public ResultSetTokenRange getResultSetTokenRangeInclusive() {
       return resultSetTokenRangeInclusive;
+   }
+
+
+   /**
+    * @param landmark value of the landmark
+    * @param token value used to end the token range
+    */
+   private void add(final char[] landmark, final int token) {
+      final int previousToken;
+
+      assert resultSetLandmark.getSize() >= 0 : "Must not be the first annotation added";
+
+      //
+      // Get the last token added.
+      //
+      previousToken = getToken(resultSetLandmark.getSize());
+
+      //
+      // Add a landmark.
+      //
+      resultSetLandmark.add(landmark, token);
+
+      //
+      // Add landmark range.
+      //
+      resultSetTokenRangeExclusive.add(previousToken + 1, token - 1);
+      resultSetTokenRangeInclusive.add(previousToken, token);
+   }
+
+
+   private int getToken(final int index) {
+      return resultSetLandmark.getToken(index);
    }
 }

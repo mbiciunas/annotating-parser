@@ -26,7 +26,7 @@ import java.util.Random;
  */
 final class RandomCase {
 
-   private final transient List<String> arrayStatement = new ArrayList<String>();
+   private final transient List<String> arrayStatement = new ArrayList<>();
    private final transient Random randomGenerator = new Random(System.currentTimeMillis());
 
 
@@ -47,12 +47,12 @@ final class RandomCase {
    }
 
 
-   private String caseLower(final String statement) {
+   private static String caseLower(final String statement) {
       return statement.toLowerCase(Locale.getDefault());
    }
 
 
-   private String caseUpper(final String statement) {
+   private static String caseUpper(final String statement) {
       return statement.toUpperCase(Locale.getDefault());
    }
 

@@ -88,6 +88,8 @@ public final class ResultSetAnnotation extends AbstractResizable {
    private static class ComparatorToken implements Comparator<ResultSingleAnnotation>, Serializable {
       private static final long serialVersionUID = 1L;
 
+      public ComparatorToken() { }
+
       @Override
       public int compare(final ResultSingleAnnotation result1, final ResultSingleAnnotation result2) {
          final int compare;

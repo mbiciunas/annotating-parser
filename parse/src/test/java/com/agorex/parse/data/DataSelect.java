@@ -26,7 +26,7 @@ import java.util.Random;
  */
 public final class DataSelect {
 
-   private static List<String> arraySelect = new ArrayList<String>();
+   private static List<String> arraySelect = new ArrayList<>();
    private static int arraySize;
    private static final transient Random RANDOM_NUMBER = new Random(System.currentTimeMillis());
 

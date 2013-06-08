@@ -40,7 +40,7 @@ public final class DataAnnotationState {
    /**
     * @param quoteState new state of the quotes
     */
-   public void setQuoteState(final QuoteState quoteState) { this.quoteState = quoteState; };
+   public void setQuoteState(final QuoteState quoteState) { this.quoteState = quoteState; }
 
 
    /**
@@ -52,7 +52,7 @@ public final class DataAnnotationState {
    /**
     * @param bracketState new state of the brackets
     */
-   public void setBracketState(final BracketState bracketState) { this.bracketState = bracketState; };
+   public void setBracketState(final BracketState bracketState) { this.bracketState = bracketState; }
 
 
    /**
@@ -64,7 +64,7 @@ public final class DataAnnotationState {
    /**
     * @param bracketDepth new number of bracket sets
     */
-   public void setBracketDepth(final int bracketDepth) { this.bracketDepth = bracketDepth; };
+   public void setBracketDepth(final int bracketDepth) { this.bracketDepth = bracketDepth; }
 
 
    /**
@@ -76,7 +76,7 @@ public final class DataAnnotationState {
    /**
     * @param bracketStart token value for the start of the bracket
     */
-   public void setBracketStart(final int bracketStart) { this.bracketStart = bracketStart; };
+   public void setBracketStart(final int bracketStart) { this.bracketStart = bracketStart; }
 
 
    /**
@@ -88,5 +88,5 @@ public final class DataAnnotationState {
    /**
     * @param bracketEnd token value for the end of the bracket
     */
-   public void setBracketEnd(final int bracketEnd) { this.bracketEnd = bracketEnd; };
+   public void setBracketEnd(final int bracketEnd) { this.bracketEnd = bracketEnd; }
 }
