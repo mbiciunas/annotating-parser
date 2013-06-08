@@ -15,7 +15,6 @@
  */
 package com.agorex.parse.token;
 
-import java.util.Arrays;
 
 
 
@@ -29,7 +28,7 @@ public final class SourceData {
    private static final int CASE_UPPER_END = 90;
    private static final int CASE_CONVERSION = 32;
 
-   private transient char[] source;
+   private transient String source;
    private transient int sourceLength;
 
 
@@ -37,8 +36,8 @@ public final class SourceData {
     * @param source string containing the data to be parsed.
     */
    public void initialize(final String source) {
-      this.source = source.toCharArray();
-      sourceLength = this.source.length;
+      this.source = source;
+      sourceLength = this.source.length();
    }
 
 
@@ -55,7 +54,7 @@ public final class SourceData {
    public char getCharacter(final int pointer) {
       rangeCheck(pointer);
 
-      return source[pointer];
+      return source.charAt(pointer);
    }
 
 
@@ -68,7 +67,8 @@ public final class SourceData {
       rangeCheck(pointerStart);
       rangeCheck(pointerEnd);
 
-      return new String(source, pointerStart, pointerEnd - pointerStart);
+      return source.substring(pointerStart, pointerEnd);
+//      return new String(source, pointerStart, pointerEnd - pointerStart);
    }
 
 
@@ -78,7 +78,8 @@ public final class SourceData {
     * @return string containing the data identified by the token.
     */
    public String getToken(final TokenData tokenData, final int index) {
-      return new String(source, tokenData.getStartPointer(index), tokenData.getTokenWidth(index));
+      return source.substring(tokenData.getStartPointer(index), tokenData.getEndPointer(index));
+//      return new String(source, tokenData.getStartPointer(index), tokenData.getTokenWidth(index));
    }
 
 
@@ -88,7 +89,8 @@ public final class SourceData {
     * @return lower case string containing the data identified by the token.
     */
    public char[] getTokenLowerCase(final TokenData tokenData, final int index) {
-      final char[] token = Arrays.copyOfRange(source, tokenData.getStartPointer(index), tokenData.getEndPointer(index));
+      final char[] token = source.substring(tokenData.getStartPointer(index), tokenData.getEndPointer(index)).toCharArray();
+//      final char[] token = Arrays.copyOfRange(source, tokenData.getStartPointer(index), tokenData.getEndPointer(index));
       final int length = token.length;
 
       for (int pointer = 0; pointer < length; ++pointer) {
@@ -124,7 +126,7 @@ public final class SourceData {
       }
 
       for (int i = 0; i < length; i++) {
-         if (valueLowerCase[i] != source[pointerStart + i] && valueLowerCase[i] - CASE_CONVERSION != source[pointerStart + i]) {
+         if (valueLowerCase[i] != source.charAt(pointerStart + i) && valueLowerCase[i] - CASE_CONVERSION != source.charAt(pointerStart + i)) {
             same = false;
          }
       }
