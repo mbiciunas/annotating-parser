@@ -45,7 +45,7 @@ public final class ResultSetLandmark extends AbstractResizable {
     * @param landmark value to add to list of landmark results
     * @param token value of token being added
     */
-   public void add(final char[] landmark, final int token) {
+   public void add(final String landmark, final int token) {
       increment();
 
       resultSingleLandmark[super.getSize()] = new ResultSingleLandmark(landmark, token);
@@ -56,7 +56,7 @@ public final class ResultSetLandmark extends AbstractResizable {
     * @param index position of landmark to return
     * @return landmark identified by the index
     */
-   public char[] getLandmark(final int index) {
+   public String getLandmark(final int index) {
       return resultSingleLandmark[index].getLandmark();
    }
 

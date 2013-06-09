@@ -37,7 +37,7 @@ public final class DataAllLandmark {
     * @param landmark value of the landmark
     * @param token position of the token
     */
-   public void add(final char[] landmark, final int token) {
+   public void add(final String landmark, final int token) {
       resultSetLandmark.add(landmark, token);
    }
 

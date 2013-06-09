@@ -16,7 +16,6 @@
 package com.agorex.parse.search.landmark;
 
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -31,10 +30,6 @@ public final class LandmarkDataTest {
    private static final String LANDMARK_SELECT = "Select";
    private static final String LANDMARK_FROM = "FROM";
    private static final String LANDMARK_WHERE = "where";
-
-   private static final char[] LANDMARK_CHAR_SELECT = "select".toCharArray();
-   private static final char[] LANDMARK_CHAR_FROM = "from".toCharArray();
-   private static final char[] LANDMARK_CHAR_WHERE = "where".toCharArray();
 
    private transient LandmarkData landmarkData;
 
@@ -53,12 +48,12 @@ public final class LandmarkDataTest {
     */
    @Test
    public void testLandmarkDataCharArrayArray() {
-      landmarkData = new LandmarkData(LANDMARK_CHAR_SELECT, LANDMARK_CHAR_FROM, LANDMARK_CHAR_WHERE);
+      landmarkData = new LandmarkData(LANDMARK_SELECT, LANDMARK_FROM, LANDMARK_WHERE);
 
       assertEquals("Result set not right size", 2, landmarkData.getSize());
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_SELECT, landmarkData.getLandmark(0));
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_FROM, landmarkData.getLandmark(1));
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_WHERE, landmarkData.getLandmark(2));
+      assertEquals("Landmark value", LANDMARK_SELECT, landmarkData.getLandmark(0));
+      assertEquals("Landmark value", LANDMARK_FROM, landmarkData.getLandmark(1));
+      assertEquals("Landmark value", LANDMARK_WHERE, landmarkData.getLandmark(2));
    }
 
 
@@ -73,10 +68,10 @@ public final class LandmarkDataTest {
       landmarkData.add(LANDMARK_FROM);
       landmarkData.add(LANDMARK_WHERE);
 
-      assertEquals("Size is  not right", 2, landmarkData.getSize());
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_SELECT, landmarkData.getLandmark(0));
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_FROM, landmarkData.getLandmark(1));
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_WHERE, landmarkData.getLandmark(2));
+      assertEquals("Size is not right", 2, landmarkData.getSize());
+      assertEquals("Landmark value", LANDMARK_SELECT, landmarkData.getLandmark(0));
+      assertEquals("Landmark value", LANDMARK_FROM, landmarkData.getLandmark(1));
+      assertEquals("Landmark value", LANDMARK_WHERE, landmarkData.getLandmark(2));
    }
 
 
@@ -89,7 +84,7 @@ public final class LandmarkDataTest {
 
       landmarkData.initialize();
 
-      assertEquals("Sizeis  not right", -1, landmarkData.getSize());
+      assertEquals("Sizeis not right", -1, landmarkData.getSize());
    }
 
 
@@ -100,7 +95,7 @@ public final class LandmarkDataTest {
    public void testGetSize() {
       landmarkData.add(LANDMARK_SELECT);
 
-      assertEquals("Size is  not right", 0, landmarkData.getSize());
+      assertEquals("Size is not right", 0, landmarkData.getSize());
    }
 
 
@@ -113,10 +108,10 @@ public final class LandmarkDataTest {
       landmarkData.add(LANDMARK_FROM);
       landmarkData.add(LANDMARK_WHERE);
 
-      assertEquals("Sizeis  not right", 2, landmarkData.getSize());
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_SELECT, landmarkData.getLandmark(0));
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_FROM, landmarkData.getLandmark(1));
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_WHERE, landmarkData.getLandmark(2));
+      assertEquals("Size is not right", 2, landmarkData.getSize());
+      assertEquals("Landmark value", LANDMARK_SELECT, landmarkData.getLandmark(0));
+      assertEquals("Landmark value", LANDMARK_FROM, landmarkData.getLandmark(1));
+      assertEquals("Landmark value", LANDMARK_WHERE, landmarkData.getLandmark(2));
    }
 
 
@@ -127,6 +122,6 @@ public final class LandmarkDataTest {
    public void testGetLandmark() {
       landmarkData.add(LANDMARK_SELECT);
 
-      assertArrayEquals("Landmark value", LANDMARK_CHAR_SELECT, landmarkData.getLandmark(0));
+      assertEquals("Landmark value", LANDMARK_SELECT, landmarkData.getLandmark(0));
    }
 }

@@ -96,7 +96,7 @@ final class DataSqlQuoteDouble04 extends AbstractData {
       dataAllLandmark.getLandmarkData().add("select");
       dataAllLandmark.getLandmarkData().add("from");
 
-      dataAllLandmark.add("select".toCharArray(), 0);
+      dataAllLandmark.add("select", 0);
    }
 
 
@@ -105,7 +105,7 @@ final class DataSqlQuoteDouble04 extends AbstractData {
       dataAllLandmark.getLandmarkData().add("SELECT");
       dataAllLandmark.getLandmarkData().add("FROM");
 
-      dataAllLandmark.addFirstAndLast("select".toCharArray(), 0, 6);
+      dataAllLandmark.addFirstAndLast("select", 0, 6);
    }
 
 
@@ -114,6 +114,6 @@ final class DataSqlQuoteDouble04 extends AbstractData {
       dataAllLandmarkRange.getLandmarkData().add("select");
       dataAllLandmarkRange.getLandmarkData().add("from");
 
-      dataAllLandmarkRange.addFirstAndLast("select".toCharArray(), 0, 0, 6);
+      dataAllLandmarkRange.addFirstAndLast("select", 0, 0, 6);
    }
 }

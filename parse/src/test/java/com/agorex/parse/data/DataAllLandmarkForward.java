@@ -42,7 +42,7 @@ public final class DataAllLandmarkForward {
     * @param token value used to end the first token range and start the second token range
     * @param maxToken value used to end last token range
     */
-   public void addFirstAndLast(final char[] landmark, final int token, final int maxToken) {
+   public void addFirstAndLast(final String landmark, final int token, final int maxToken) {
 
       assert token <= maxToken : "Token " + token + " must be less than or equal to maximum token " + maxToken;
       assert resultSetLandmark.getSize() < 0 : "Must be first landmark added";
@@ -64,7 +64,7 @@ public final class DataAllLandmarkForward {
     * @param landmark value of the landmark
     * @param token value used to end the token range
     */
-   public void addFirst(final char[] landmark, final int token) {
+   public void addFirst(final String landmark, final int token) {
 
       assert resultSetLandmark.getSize() < 0 : "Must be first annotation added";
 
@@ -77,7 +77,7 @@ public final class DataAllLandmarkForward {
     * @param token value used to end the first token range and start the second token range
     * @param maxToken value used to end last token range
     */
-   public void addLast(final char[] landmark, final int token, final int maxToken) {
+   public void addLast(final String landmark, final int token, final int maxToken) {
 
       assert token <= maxToken : "Token " + token + " must be less than or equal to maximum token " + maxToken;
       assert resultSetLandmark.getSize() >= 0 : "Must not be the first annotation added";
@@ -149,7 +149,7 @@ public final class DataAllLandmarkForward {
     * @param landmark value of the landmark
     * @param token value used to end the token range
     */
-   private void add(final char[] landmark, final int token) {
+   private void add(final String landmark, final int token) {
       final int previousToken;
 
       assert resultSetLandmark.getSize() >= 0 : "Must not be the first annotation added";

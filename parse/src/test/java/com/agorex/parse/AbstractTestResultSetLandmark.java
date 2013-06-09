@@ -40,8 +40,8 @@ public abstract class AbstractTestResultSetLandmark extends AbstractTest {
       assertEquals(className + " - Number of token ranges", expectedResultSet.getSize(), size);
 
       for (int index = 0; index <= size; ++index) {
-         landmark = String.copyValueOf(actualResultSet.getLandmark(index));
-         correctLandmark = String.copyValueOf(expectedResultSet.getLandmark(index));
+         landmark = actualResultSet.getLandmark(index);
+         correctLandmark = expectedResultSet.getLandmark(index);
 
          assertEquals(className + " - landmark", correctLandmark, landmark);
          assertEquals(className + " - token", expectedResultSet.getToken(index), actualResultSet.getToken(index));

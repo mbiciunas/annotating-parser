@@ -96,7 +96,7 @@ public final class ResultSetTokenRangeTest {
     */
    @Test
    public void testAddCharArrayIntInt() {
-      resultSetTokenRange.add(TOKEN_RANGE_SELECT.getName().toCharArray(), TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
+      resultSetTokenRange.add(TOKEN_RANGE_SELECT.getName(), TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
 
       assertEquals("Token name is wrong", TOKEN_RANGE_SELECT.getName(), resultSetTokenRange.getTokenRange(0).getName());
       assertEquals("Token start value is wrong", TOKEN_RANGE_SELECT.getTokenStart(), resultSetTokenRange.getTokenRange(0).getTokenStart());
@@ -136,11 +136,11 @@ public final class ResultSetTokenRangeTest {
    public void testFind() {
       TokenRange result;
 
-      resultSetTokenRange.add(TOKEN_RANGE_SELECT.getName().toCharArray(), TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
-      resultSetTokenRange.add(TOKEN_RANGE_FROM.getName().toCharArray(), TOKEN_RANGE_FROM.getTokenStart(), TOKEN_RANGE_FROM.getTokenEnd());
-      resultSetTokenRange.add(TOKEN_RANGE_WHERE.getName().toCharArray(), TOKEN_RANGE_WHERE.getTokenStart(), TOKEN_RANGE_WHERE.getTokenEnd());
+      resultSetTokenRange.add(TOKEN_RANGE_SELECT.getName(), TOKEN_RANGE_SELECT.getTokenStart(), TOKEN_RANGE_SELECT.getTokenEnd());
+      resultSetTokenRange.add(TOKEN_RANGE_FROM.getName(), TOKEN_RANGE_FROM.getTokenStart(), TOKEN_RANGE_FROM.getTokenEnd());
+      resultSetTokenRange.add(TOKEN_RANGE_WHERE.getName(), TOKEN_RANGE_WHERE.getTokenStart(), TOKEN_RANGE_WHERE.getTokenEnd());
 
-      result = resultSetTokenRange.find(TOKEN_RANGE_FROM.getName().toCharArray());
+      result = resultSetTokenRange.find(TOKEN_RANGE_FROM.getName());
 
       assertEquals("Token name is wrong", TOKEN_RANGE_FROM.getName(), result.getName());
       assertEquals("Token start value is wrong", TOKEN_RANGE_FROM.getTokenStart(), result.getTokenStart());

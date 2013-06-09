@@ -59,10 +59,10 @@ public final class ResultSetTokenRange extends AbstractResizable {
     * @param tokenStart token at start of range.
     * @param tokenEnd token at end of range.
     */
-   public void add(final char[] landmark, final int tokenStart, final int tokenEnd) {
+   public void add(final String landmark, final int tokenStart, final int tokenEnd) {
       increment();
 
-      resultSingleTokenRange[getSize()] = new TokenRange(String.valueOf(landmark), tokenStart, tokenEnd);
+      resultSingleTokenRange[getSize()] = new TokenRange(landmark, tokenStart, tokenEnd);
    }
 
 
@@ -91,11 +91,11 @@ public final class ResultSetTokenRange extends AbstractResizable {
     * @param landmark identifier for the token range to find.
     * @return token range found.
     */
-   public TokenRange find(final char[] landmark) {
+   public TokenRange find(final String landmark) {
       TokenRange tokenRangeFound = null;
 
       for (int index = 0; index <= getSize(); ++index) {
-         if (Arrays.equals(resultSingleTokenRange[index].getName().toCharArray(), landmark)) {
+         if (resultSingleTokenRange[index].getName().equals(landmark)) {
             tokenRangeFound = resultSingleTokenRange[index];
             break;
          }

@@ -97,8 +97,8 @@ final class DataSqlBracket04 extends AbstractData {
       dataAllLandmark.getLandmarkData().add("select");
       dataAllLandmark.getLandmarkData().add("from");
 
-      dataAllLandmark.add("select".toCharArray(), 0);
-      dataAllLandmark.add("from".toCharArray(), 4);
+      dataAllLandmark.add("select", 0);
+      dataAllLandmark.add("from", 4);
    }
 
 
@@ -107,8 +107,8 @@ final class DataSqlBracket04 extends AbstractData {
       dataAllLandmark.getLandmarkData().add("select");
       dataAllLandmark.getLandmarkData().add("FROM");
 
-      dataAllLandmark.addFirst("select".toCharArray(), 0);
-      dataAllLandmark.addLast("from".toCharArray(), 4, 7);
+      dataAllLandmark.addFirst("select", 0);
+      dataAllLandmark.addLast("from", 4, 7);
    }
 
 
@@ -117,7 +117,7 @@ final class DataSqlBracket04 extends AbstractData {
       dataAllLandmarkRange.getLandmarkData().add("select");
       dataAllLandmarkRange.getLandmarkData().add("from");
 
-      dataAllLandmarkRange.addFirst("select".toCharArray(), 0, 0);
-      dataAllLandmarkRange.addLast("from".toCharArray(), 4, 7);
+      dataAllLandmarkRange.addFirst("select", 0, 0);
+      dataAllLandmarkRange.addLast("from", 4, 7);
    }
 }

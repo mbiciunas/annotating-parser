@@ -16,7 +16,6 @@
 package com.agorex.parse.search.landmark;
 
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -28,10 +27,10 @@ import org.junit.Test;
  */
 public final class ResultSetLandmarkTest {
 
-   private static final char[] LANDMARK_SELECT = "select".toCharArray();
-   private static final char[] LANDMARK_FROM = "from".toCharArray();
-   private static final char[] LANDMARK_WHERE = "where".toCharArray();
-   private static final char[] LANDMARK_GROUP_BY = "group".toCharArray();
+   private static final String LANDMARK_SELECT = "select";
+   private static final String LANDMARK_FROM = "from";
+   private static final String LANDMARK_WHERE = "where";
+   private static final String LANDMARK_GROUP_BY = "group";
 
    private static final int TOKEN_SELECT = 1;
    private static final int TOKEN_FROM = 2;
@@ -92,7 +91,7 @@ public final class ResultSetLandmarkTest {
    public void testGetLandmark() {
       resultSetLandmark.add(LANDMARK_SELECT, TOKEN_SELECT);
 
-      assertArrayEquals("Landmark value is wrong", LANDMARK_SELECT, resultSetLandmark.getLandmark(0));
+      assertEquals("Landmark value is wrong", LANDMARK_SELECT, resultSetLandmark.getLandmark(0));
    }
 
 
@@ -114,7 +113,7 @@ public final class ResultSetLandmarkTest {
    public void testAdd() {
       resultSetLandmark.add(LANDMARK_SELECT, TOKEN_SELECT);
 
-      assertArrayEquals("Landmark value is wrong", LANDMARK_SELECT, resultSetLandmark.getLandmark(0));
+      assertEquals("Landmark value is wrong", LANDMARK_SELECT, resultSetLandmark.getLandmark(0));
       assertEquals("Token value is wrong", TOKEN_SELECT, resultSetLandmark.getToken(0));
    }
 

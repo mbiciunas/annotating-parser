@@ -16,7 +16,6 @@
 package com.agorex.parse.search.landmark;
 
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -28,7 +27,7 @@ import org.junit.Test;
  */
 public final class ResultSingleLandmarkTest {
 
-   private static final char[] LANDMARK = "test".toCharArray();
+   private static final String LANDMARK = "test";
    private static final int TOKEN = 4;
 
    private transient ResultSingleLandmark resultSingleLandmark;
@@ -48,7 +47,7 @@ public final class ResultSingleLandmarkTest {
     */
    @Test
    public void testResultSingleLandmark() {
-      assertArrayEquals("Landmark not right", LANDMARK, resultSingleLandmark.getLandmark());
+      assertEquals("Landmark not right", LANDMARK, resultSingleLandmark.getLandmark());
       assertEquals("token not right", TOKEN, resultSingleLandmark.getToken());
    }
 
@@ -58,7 +57,7 @@ public final class ResultSingleLandmarkTest {
     */
    @Test
    public void testGetLandmark() {
-      assertArrayEquals("Landmark not right", LANDMARK, resultSingleLandmark.getLandmark());
+      assertEquals("Landmark not right", LANDMARK, resultSingleLandmark.getLandmark());
    }
 
 

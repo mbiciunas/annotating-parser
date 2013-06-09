@@ -138,9 +138,8 @@ public final class SourceDataTest {
       tokenData.add(5, 7, 0);
       tokenData.add(8, 11, 0);
 
-      assertTrue("Token value is wrong", sourceData.compareLowerCase(tokenData, 0, SOURCE_STRING_1.substring(0, 4).toLowerCase().toCharArray()));
-      assertTrue("Token value is wrong", sourceData.compareLowerCase(tokenData, 1, SOURCE_STRING_1.substring(5, 7).toLowerCase().toCharArray()));
-      assertTrue("Token value is wrong", sourceData.compareLowerCase(tokenData, 2, SOURCE_STRING_1.substring(8, 11).toLowerCase().toCharArray()));
+      assertTrue("Token value is wrong", sourceData.compareLowerCase(tokenData, 0, SOURCE_STRING_1.substring(0, 4).toLowerCase()));
+      assertTrue("Token value is wrong", sourceData.compareLowerCase(tokenData, 1, SOURCE_STRING_1.substring(5, 7).toLowerCase()));
+      assertTrue("Token value is wrong", sourceData.compareLowerCase(tokenData, 2, SOURCE_STRING_1.substring(8, 11).toLowerCase()));
    }
-
 }

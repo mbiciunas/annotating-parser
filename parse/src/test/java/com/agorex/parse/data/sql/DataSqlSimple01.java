@@ -91,8 +91,8 @@ final class DataSqlSimple01 extends AbstractData {
       dataAllLandmark.getLandmarkData().add("select");
       dataAllLandmark.getLandmarkData().add("from");
 
-      dataAllLandmark.add("select".toCharArray(), 0);
-      dataAllLandmark.add("from".toCharArray(), 2);
+      dataAllLandmark.add("select", 0);
+      dataAllLandmark.add("from", 2);
    }
 
 
@@ -101,8 +101,8 @@ final class DataSqlSimple01 extends AbstractData {
       dataAllLandmarkForward.getLandmarkData().add("select");
       dataAllLandmarkForward.getLandmarkData().add("from");
 
-      dataAllLandmarkForward.addFirst("select".toCharArray(), 0);
-      dataAllLandmarkForward.addLast("from".toCharArray(), 2, 3);
+      dataAllLandmarkForward.addFirst("select", 0);
+      dataAllLandmarkForward.addLast("from", 2, 3);
    }
 
 
@@ -111,7 +111,7 @@ final class DataSqlSimple01 extends AbstractData {
       dataAllLandmarkRange.getLandmarkData().add("select");
       dataAllLandmarkRange.getLandmarkData().add("from");
 
-      dataAllLandmarkRange.addFirst("select".toCharArray(), 0, 0);
-      dataAllLandmarkRange.addLast("from".toCharArray(), 2, 3);
+      dataAllLandmarkRange.addFirst("select", 0, 0);
+      dataAllLandmarkRange.addLast("from", 2, 3);
    }
 }

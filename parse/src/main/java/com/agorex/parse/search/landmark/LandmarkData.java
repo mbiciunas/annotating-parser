@@ -28,13 +28,13 @@ import com.agorex.parse.utility.AbstractResizable;
  */
 public final class LandmarkData extends AbstractResizable {
 
-   private transient char[][] landmarkArray;
+   private transient String[] landmarkArray;
 
 
    /**
     * @param landmarkArray array of landmarks
     */
-   public LandmarkData(final char[] ... landmarkArray) {
+   public LandmarkData(final String ... landmarkArray) {
       super(landmarkArray.length);
 
       this.landmarkArray = landmarkArray.clone();
@@ -48,7 +48,7 @@ public final class LandmarkData extends AbstractResizable {
     */
    public LandmarkData(final int capacity) {
       super(capacity);
-      landmarkArray = new char[capacity][];
+      landmarkArray = new String[capacity];
    }
 
 
@@ -58,7 +58,7 @@ public final class LandmarkData extends AbstractResizable {
    public void add(final String landmark) {
       increment();
 
-      landmarkArray[super.getSize()] = landmark.toLowerCase(Locale.getDefault()).toCharArray();
+      landmarkArray[super.getSize()] = landmark.toLowerCase(Locale.getDefault());
    }
 
 
@@ -66,8 +66,8 @@ public final class LandmarkData extends AbstractResizable {
     * @param index position of landmark to return
     * @return landmark identified by the index
     */
-   char[] getLandmark(final int index) {
-      return landmarkArray[index].clone();
+   String getLandmark(final int index) {
+      return landmarkArray[index];
    }
 
 

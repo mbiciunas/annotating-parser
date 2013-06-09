@@ -15,8 +15,6 @@
  */
 package com.agorex.parse.search.landmark;
 
-import java.util.Arrays;
-
 import com.agorex.parse.ParseData;
 import com.agorex.parse.annotation.AnnotationState;
 import com.agorex.parse.annotation.AnnotationState.BracketState;
@@ -70,14 +68,27 @@ public final class FindAllLandmark {
 
 
    private static void checkLandmark(final ParseData parseData, final int token, final LandmarkData landmarkData, final ResultSetLandmark resultSetLandmark) {
-      final char[] tokenValue = parseData.getSource().getTokenLowerCase(parseData.getToken(), token);
+      final String tokenValue = parseData.getSource().getToken(parseData.getToken(), token);
 
       for (int index = 0; index <= landmarkData.getSize(); ++index) {
-         if (Arrays.equals(tokenValue, landmarkData.getLandmark(index))) {
+         if (tokenValue.equalsIgnoreCase(landmarkData.getLandmark(index))) {
             resultSetLandmark.add(landmarkData.getLandmark(index), token);
             break;
          }
 
       }
    }
+
+
+//   private static void checkLandmark(final ParseData parseData, final int token, final LandmarkData landmarkData, final ResultSetLandmark resultSetLandmark) {
+//      final char[] tokenValue = parseData.getSource().getTokenLowerCase(parseData.getToken(), token);
+//
+//      for (int index = 0; index <= landmarkData.getSize(); ++index) {
+//         if (Arrays.equals(tokenValue, landmarkData.getLandmark(index))) {
+//            resultSetLandmark.add(landmarkData.getLandmark(index), token);
+//            break;
+//         }
+//
+//      }
+//   }
 }

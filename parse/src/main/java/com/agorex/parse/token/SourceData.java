@@ -15,6 +15,8 @@
  */
 package com.agorex.parse.token;
 
+import java.util.Locale;
+
 
 
 
@@ -24,8 +26,6 @@ package com.agorex.parse.token;
  */
 public final class SourceData {
 
-   private static final int CASE_UPPER_START = 65;
-   private static final int CASE_UPPER_END = 90;
    private static final int CASE_CONVERSION = 32;
 
    private transient String source;
@@ -68,7 +68,6 @@ public final class SourceData {
       rangeCheck(pointerEnd);
 
       return source.substring(pointerStart, pointerEnd);
-//      return new String(source, pointerStart, pointerEnd - pointerStart);
    }
 
 
@@ -79,7 +78,6 @@ public final class SourceData {
     */
    public String getToken(final TokenData tokenData, final int index) {
       return source.substring(tokenData.getStartPointer(index), tokenData.getEndPointer(index));
-//      return new String(source, tokenData.getStartPointer(index), tokenData.getTokenWidth(index));
    }
 
 
@@ -88,18 +86,8 @@ public final class SourceData {
     * @param index position of token within the token data array.
     * @return lower case string containing the data identified by the token.
     */
-   public char[] getTokenLowerCase(final TokenData tokenData, final int index) {
-      final char[] token = source.substring(tokenData.getStartPointer(index), tokenData.getEndPointer(index)).toCharArray();
-//      final char[] token = Arrays.copyOfRange(source, tokenData.getStartPointer(index), tokenData.getEndPointer(index));
-      final int length = token.length;
-
-      for (int pointer = 0; pointer < length; ++pointer) {
-         if (token[pointer] >= CASE_UPPER_START && token[pointer] <= CASE_UPPER_END) {
-            token[pointer] = (char) (token[pointer] + CASE_CONVERSION);
-         }
-      }
-
-      return token;
+   public String getTokenLowerCase(final TokenData tokenData, final int index) {
+      return source.substring(tokenData.getStartPointer(index), tokenData.getEndPointer(index)).toLowerCase(Locale.getDefault());
    }
 
 
@@ -109,7 +97,7 @@ public final class SourceData {
     * @param valueLowerCase value we want to compare to the source.
     * @return true if the value matches the source data identified by the token.
     */
-   public boolean compareLowerCase(final TokenData tokenData, final int index, final char[] valueLowerCase) {
+   public boolean compareLowerCase(final TokenData tokenData, final int index, final String valueLowerCase) {
       boolean same = true;
       final int length;
       final int pointerStart;
@@ -118,16 +106,17 @@ public final class SourceData {
          throw new IllegalArgumentException("arrayLowerCase is null");
       }
 
-      length = valueLowerCase.length;
+      length = valueLowerCase.length();
       pointerStart = tokenData.getStartPointer(index);
 
       if (length + pointerStart != tokenData.getEndPointer(index)) {
          same = false;
       }
-
-      for (int i = 0; i < length; i++) {
-         if (valueLowerCase[i] != source.charAt(pointerStart + i) && valueLowerCase[i] - CASE_CONVERSION != source.charAt(pointerStart + i)) {
-            same = false;
+      else {
+         for (int i = 0; i < length; i++) {
+            if (valueLowerCase.charAt(i) != source.charAt(pointerStart + i) && valueLowerCase.charAt(i) - CASE_CONVERSION != source.charAt(pointerStart + i)) {
+               same = false;
+            }
          }
       }
 

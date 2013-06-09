@@ -22,7 +22,7 @@ package com.agorex.parse.search.landmark;
  */
 final class ResultSingleLandmark {
 
-   private final transient char[] landmark;
+   private final transient String landmark;
    private final transient int token;
 
 
@@ -30,8 +30,8 @@ final class ResultSingleLandmark {
     * @param landmark value of landmark for this result.
     * @param token value of the token for this result.
     */
-   ResultSingleLandmark(final char[] landmark, final int token) {
-      this.landmark = landmark.clone();
+   ResultSingleLandmark(final String landmark, final int token) {
+      this.landmark = landmark;
       this.token = token;
    }
 
@@ -39,7 +39,7 @@ final class ResultSingleLandmark {
    /**
     * @return value of landmark for this result.
     */
-   public char[] getLandmark() { return landmark.clone(); }
+   public String getLandmark() { return landmark; }
 
 
    /**
