@@ -49,7 +49,7 @@ public final class TokenRangeTest {
       assertEquals("token name not right", null, tokenRange.getName());
       assertEquals("Start token not right", -1, tokenRange.getTokenStart());
       assertEquals("End token not right", -1, tokenRange.getTokenEnd());
-      assertEquals("Token width not right", 0, tokenRange.getWidth());
+      assertEquals("Token width not right", 1, tokenRange.getWidth());
    }
 
 
@@ -63,7 +63,7 @@ public final class TokenRangeTest {
       assertEquals("token name not right", null, tokenRange.getName());
       assertEquals("Start token not right", 3, tokenRange.getTokenStart());
       assertEquals("End token not right", 7, tokenRange.getTokenEnd());
-      assertEquals("Token width not right", 4, tokenRange.getWidth());
+      assertEquals("Token width not right", 5, tokenRange.getWidth());
    }
 
 
@@ -77,7 +77,7 @@ public final class TokenRangeTest {
       assertEquals("token name not right", "test", tokenRange.getName());
       assertEquals("Start token not right", 3, tokenRange.getTokenStart());
       assertEquals("End token not right", 7, tokenRange.getTokenEnd());
-      assertEquals("Token width not right", 4, tokenRange.getWidth());
+      assertEquals("Token width not right", 5, tokenRange.getWidth());
    }
 
 
@@ -154,6 +154,6 @@ public final class TokenRangeTest {
    public void testGetWidth() {
       tokenRange = new TokenRange(3, 7);
 
-      assertEquals("Token width not right", 4, tokenRange.getWidth());
+      assertEquals("Token width not right", 5, tokenRange.getWidth());
    }
 }

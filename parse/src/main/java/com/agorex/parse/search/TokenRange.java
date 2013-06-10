@@ -97,5 +97,5 @@ public final class TokenRange {
    /**
     * @return number of tokens between the star and end of this token range.
     */
-   public int getWidth() { return tokenEnd - tokenStart; }
+   public int getWidth() { return tokenEnd - tokenStart + 1; }
 }

@@ -18,6 +18,8 @@ package com.agorex.parse.search.landmark;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Locale;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -69,9 +71,9 @@ public final class LandmarkDataTest {
       landmarkData.add(LANDMARK_WHERE);
 
       assertEquals("Size is not right", 2, landmarkData.getSize());
-      assertEquals("Landmark value", LANDMARK_SELECT, landmarkData.getLandmark(0));
-      assertEquals("Landmark value", LANDMARK_FROM, landmarkData.getLandmark(1));
-      assertEquals("Landmark value", LANDMARK_WHERE, landmarkData.getLandmark(2));
+      assertEquals("Landmark value", LANDMARK_SELECT.toLowerCase(Locale.getDefault()), landmarkData.getLandmark(0));
+      assertEquals("Landmark value", LANDMARK_FROM.toLowerCase(Locale.getDefault()), landmarkData.getLandmark(1));
+      assertEquals("Landmark value", LANDMARK_WHERE.toLowerCase(Locale.getDefault()), landmarkData.getLandmark(2));
    }
 
 
@@ -109,9 +111,9 @@ public final class LandmarkDataTest {
       landmarkData.add(LANDMARK_WHERE);
 
       assertEquals("Size is not right", 2, landmarkData.getSize());
-      assertEquals("Landmark value", LANDMARK_SELECT, landmarkData.getLandmark(0));
-      assertEquals("Landmark value", LANDMARK_FROM, landmarkData.getLandmark(1));
-      assertEquals("Landmark value", LANDMARK_WHERE, landmarkData.getLandmark(2));
+      assertEquals("Landmark value", LANDMARK_SELECT.toLowerCase(Locale.getDefault()), landmarkData.getLandmark(0));
+      assertEquals("Landmark value", LANDMARK_FROM.toLowerCase(Locale.getDefault()), landmarkData.getLandmark(1));
+      assertEquals("Landmark value", LANDMARK_WHERE.toLowerCase(Locale.getDefault()), landmarkData.getLandmark(2));
    }
 
 
@@ -122,6 +124,6 @@ public final class LandmarkDataTest {
    public void testGetLandmark() {
       landmarkData.add(LANDMARK_SELECT);
 
-      assertEquals("Landmark value", LANDMARK_SELECT, landmarkData.getLandmark(0));
+      assertEquals("Landmark value", LANDMARK_SELECT.toLowerCase(Locale.getDefault()), landmarkData.getLandmark(0));
    }
 }
